@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace groupPassport.Classes
 {
-    class Group
+    public class Group
     {
         public int Id { get; set; }
         [MaxLength(50)]

@@ -14,7 +14,9 @@ namespace groupPassport
         public Context() : base("ConnStr") { }
 
         public DbSet<Person> People { get; set; }
-      
+
+        public DbSet<Group> Groups { get; set; }
+
     }
 
 }
