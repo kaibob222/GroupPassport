@@ -59,6 +59,12 @@
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Classes\Group.cs" />
+    <Compile Include="EditGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditGroupForm.Designer.cs">
+      <DependentUpon>EditGroupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditGroupForm.resx">
+      <DependentUpon>EditGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202110207456_m1.resx">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>
     </EmbeddedResource>
