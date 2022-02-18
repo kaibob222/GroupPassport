@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace groupPassport
+{
+    public partial class GroupForm : Form
+    {
+        Context context = new Context();
+
+        public GroupForm()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void GroupForm_Load(object sender, EventArgs e)
+        {
+            var query = from c in context.Groups
+                        select new { Id = c.Id, GroupName = c.GroupName, Year = c.Year };
+            dataGridView1.DataSource = query.ToList();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+    }
+}
