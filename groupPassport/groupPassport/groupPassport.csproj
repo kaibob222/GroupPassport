@@ -56,15 +56,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGroup.Designer.cs">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\GroupLogic.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Classes\Group.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202202110207456_m1.cs" />
     <Compile Include="Migrations\202202110207456_m1.designer.cs">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>
@@ -76,6 +77,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddGroup.resx">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202110207456_m1.resx">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>
     </EmbeddedResource>
