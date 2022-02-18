@@ -7,18 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+using groupPassport.Classes;
 
 namespace groupPassport
 {
     public partial class EditGroupForm : Form
     {
-        public Context C { get; set; }
+        Context C;
         public int id = 1;
-        int startYear = 2022;
+        int startYear = 2015;
         int countYear = 100;
-        public EditGroupForm()
+        Group group;
+        public EditGroupForm(int _id)
         {
             InitializeComponent();
+            id = _id;
             for (int i = 0; i < countYear; i++)
             {
                 year.Items.Add(startYear + i);
@@ -27,31 +31,32 @@ namespace groupPassport
 
         private void drop_Click(object sender, EventArgs e)
         {
-            //drop(C, id);
+            var g = GroupLogic.drop(C, id);
 
-            var group = C.Groups.Where(c => c.Id == id).FirstOrDefault();
-            if (group != null)
-            {
-                //return group;
-            }
-
-            groupName.Text = group.GroupName;
-            //groupFullName.Text = group.GroupFullName;
-            year.SelectedIndex = (group.Year - startYear);
+            groupName.Text = g.GroupName;
+            year.SelectedIndex = (g.Year - startYear);
         }
 
         private void apply_Click(object sender, EventArgs e)
         {
-            //apply(C, id, groupName.text, groupFullName.text, year);
+            GroupLogic.apply(C, id, groupName.Text, Convert.ToInt32(year.SelectedItem));
 
-            var group = C.Groups.Where(c => c.Id == id).FirstOrDefault();
-            if (group != null)
-            {
-                group.GroupName = groupName.Text;
-                group.Year = Convert.ToInt32(year.SelectedItem);
-                C.SaveChanges();
-            }
             this.Close();
+        }
+
+        private void EditGroupForm_Load(object sender, EventArgs e)
+        {
+            C = new Context();
+            group = C.Groups.Where(c => c.Id == id).FirstOrDefault();
+
+            if (group == null)
+            {
+                MessageBox.Show("Группа не найдена");
+                this.Close();
+            }
+
+            groupName.Text = group.GroupName;
+            year.SelectedIndex = (group.Year - startYear);
         }
     }
 }

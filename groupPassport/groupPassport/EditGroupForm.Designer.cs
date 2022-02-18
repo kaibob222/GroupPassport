@@ -33,8 +33,6 @@ namespace groupPassport
             this.groupName = new System.Windows.Forms.TextBox();
             this.groupNameLabel = new System.Windows.Forms.Label();
             this.yearLabel = new System.Windows.Forms.Label();
-            this.groupFullNameLabel = new System.Windows.Forms.Label();
-            this.groupFullName = new System.Windows.Forms.TextBox();
             this.drop = new System.Windows.Forms.Button();
             this.apply = new System.Windows.Forms.Button();
             this.year = new System.Windows.Forms.ComboBox();
@@ -69,32 +67,16 @@ namespace groupPassport
             // yearLabel
             // 
             this.yearLabel.AutoSize = true;
-            this.yearLabel.Location = new System.Drawing.Point(22, 138);
+            this.yearLabel.Location = new System.Drawing.Point(22, 115);
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(25, 13);
             this.yearLabel.TabIndex = 3;
             this.yearLabel.Text = "Год";
             // 
-            // groupFullNameLabel
-            // 
-            this.groupFullNameLabel.AutoSize = true;
-            this.groupFullNameLabel.Location = new System.Drawing.Point(22, 111);
-            this.groupFullNameLabel.Name = "groupFullNameLabel";
-            this.groupFullNameLabel.Size = new System.Drawing.Size(96, 13);
-            this.groupFullNameLabel.TabIndex = 4;
-            this.groupFullNameLabel.Text = "Полное название";
-            // 
-            // groupFullName
-            // 
-            this.groupFullName.Location = new System.Drawing.Point(151, 108);
-            this.groupFullName.Name = "groupFullName";
-            this.groupFullName.Size = new System.Drawing.Size(275, 20);
-            this.groupFullName.TabIndex = 5;
-            // 
             // drop
             // 
             this.drop.AutoSize = true;
-            this.drop.Location = new System.Drawing.Point(25, 226);
+            this.drop.Location = new System.Drawing.Point(25, 171);
             this.drop.Name = "drop";
             this.drop.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.drop.Size = new System.Drawing.Size(75, 23);
@@ -106,7 +88,7 @@ namespace groupPassport
             // apply
             // 
             this.apply.AutoSize = true;
-            this.apply.Location = new System.Drawing.Point(151, 226);
+            this.apply.Location = new System.Drawing.Point(151, 171);
             this.apply.Name = "apply";
             this.apply.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.apply.Size = new System.Drawing.Size(84, 23);
@@ -118,9 +100,9 @@ namespace groupPassport
             // year
             // 
             this.year.FormattingEnabled = true;
-            this.year.Location = new System.Drawing.Point(151, 135);
+            this.year.Location = new System.Drawing.Point(151, 112);
             this.year.Name = "year";
-            this.year.Size = new System.Drawing.Size(121, 21);
+            this.year.Size = new System.Drawing.Size(125, 21);
             this.year.TabIndex = 9;
             // 
             // EditGroupForm
@@ -131,14 +113,13 @@ namespace groupPassport
             this.Controls.Add(this.year);
             this.Controls.Add(this.apply);
             this.Controls.Add(this.drop);
-            this.Controls.Add(this.groupFullName);
-            this.Controls.Add(this.groupFullNameLabel);
             this.Controls.Add(this.yearLabel);
             this.Controls.Add(this.groupNameLabel);
             this.Controls.Add(this.groupName);
             this.Controls.Add(this.label);
             this.Name = "EditGroupForm";
             this.Text = "EditGroupForm";
+            this.Load += new System.EventHandler(this.EditGroupForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,8 +131,6 @@ namespace groupPassport
         private System.Windows.Forms.TextBox groupName;
         private System.Windows.Forms.Label groupNameLabel;
         private System.Windows.Forms.Label yearLabel;
-        private System.Windows.Forms.Label groupFullNameLabel;
-        private System.Windows.Forms.TextBox groupFullName;
         private System.Windows.Forms.Button drop;
         private System.Windows.Forms.Button apply;
         private System.Windows.Forms.ComboBox year;
