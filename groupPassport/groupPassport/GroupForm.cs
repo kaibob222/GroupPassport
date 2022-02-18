@@ -21,7 +21,7 @@ namespace groupPassport
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void GroupForm_Load(object sender, EventArgs e)
@@ -33,7 +33,15 @@ namespace groupPassport
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            var f = new EditGroupForm(id);
+            f.ShowDialog();
+            dataGridView1.DataSource = context.Groups.ToList();
         }
     }
 }
