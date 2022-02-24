@@ -14,7 +14,7 @@ namespace groupPassport
     {
         private AutorizationLogic _logic;
         private Context _context;
-        private Person _currentPerson;
+        public Person _currentPerson;
         private string _login;
         private string _password;
         private int Id;
@@ -22,6 +22,8 @@ namespace groupPassport
         public Autorization()
         {
             InitializeComponent();
+            _logic = new AutorizationLogic();
+            _context = new Context();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,13 +43,13 @@ namespace groupPassport
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (_logic.GetPeopleList(_context, _login, _password).Count != 0)
+            _currentPerson = _logic.GetPeopleList( _login, _password);
+            if ( _currentPerson != null)
             {
-                Id = _logic.GetPeopleList(_context, _login, _password)[0].Id;
                 MainForm f = new MainForm(_context, Id);
                 this.Hide();
                 f.ShowDialog();
-                this.Show();
+                this.Close();
             }
             else
             {

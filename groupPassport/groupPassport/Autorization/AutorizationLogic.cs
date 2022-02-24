@@ -8,18 +8,14 @@ namespace groupPassport
 {
     class AutorizationLogic
     {
-        internal List<dynamic> GetPeopleList(Context context, string login, string password)
+        internal Person GetPeopleList(string login, string password)
         {
-
-            var groups = context.People
+            Context context = new Context();
+            Person person = context.People
                 .Where(g => g.Login == login && g.Password == password)
-                .Select(g => new { Id = g.Id, Name = g.Login })
-                .ToList<dynamic>();
+                .FirstOrDefault();
 
-            if (groups == null)
-                return null;
-            else
-                return groups;
+                return person;
         }
     }
 }
