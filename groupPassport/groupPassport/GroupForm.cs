@@ -43,5 +43,16 @@ namespace groupPassport
             f.ShowDialog();
             dataGridView1.DataSource = context.Groups.ToList();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddGroup add = new AddGroup();
+            add.Show();
+        }
+
+        private void GroupForm_Activated(object sender, EventArgs e)
+        {
+            GroupForm_Load(sender, e);
+        }
     }
 }
