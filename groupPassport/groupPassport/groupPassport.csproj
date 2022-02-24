@@ -56,6 +56,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autorization\Autorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autorization\Autorization.Designer.cs">
+      <DependentUpon>Autorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Autorization\AutorizationError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autorization\AutorizationError.Designer.cs">
+      <DependentUpon>AutorizationError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Autorization\AutorizationLogic.cs" />
+    <Compile Include="Classes\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Classes\Group.cs" />
@@ -93,6 +112,13 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
+    <EmbeddedResource Include="Autorization\Autorization.resx">
+      <DependentUpon>Autorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Autorization\AutorizationError.resx">
+      <DependentUpon>AutorizationError.cs</DependentUpon>
+
     <EmbeddedResource Include="EditGroupForm.resx">
       <DependentUpon>EditGroupForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +127,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202110207456_m1.resx">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>
@@ -129,7 +156,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
