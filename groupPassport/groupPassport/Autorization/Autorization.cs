@@ -46,7 +46,7 @@ namespace groupPassport
             _currentPerson = _logic.GetPeopleList( _login, _password);
             if ( _currentPerson != null)
             {
-                MainForm f = new MainForm(_context, Id);
+                GroupForm f = new GroupForm();
                 this.Hide();
                 f.ShowDialog();
                 this.Close();
