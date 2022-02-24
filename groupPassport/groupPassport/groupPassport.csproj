@@ -78,12 +78,29 @@
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Classes\Group.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="EditGroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="EditGroupForm.Designer.cs">
+      <DependentUpon>EditGroupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGroup.Designer.cs">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupLogic.cs" />
+    <Compile Include="GroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupForm.Designer.cs">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\GroupLogic.cs" />
+    <Compile Include="Classes\Person.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Classes\Group.cs" />
     <Compile Include="Migrations\202202110207456_m1.cs" />
     <Compile Include="Migrations\202202110207456_m1.designer.cs">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>
@@ -95,11 +112,22 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
     <EmbeddedResource Include="Autorization\Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Autorization\AutorizationError.resx">
       <DependentUpon>AutorizationError.cs</DependentUpon>
+
+    <EmbeddedResource Include="EditGroupForm.resx">
+      <DependentUpon>EditGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupForm.resx">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddGroup.resx">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202110207456_m1.resx">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>
