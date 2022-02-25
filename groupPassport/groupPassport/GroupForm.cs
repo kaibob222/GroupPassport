@@ -38,16 +38,9 @@ namespace groupPassport
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.RowCount > 0)
-            {
-                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                var f = new EditGroupForm(id);
-                f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Группа не выбрана");
-            }
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            var f = new EditGroupForm(id);
+            f.ShowDialog();
             dataGridView1.DataSource = context.Groups.ToList();
         }
 
@@ -60,6 +53,19 @@ namespace groupPassport
         private void GroupForm_Activated(object sender, EventArgs e)
         {
             GroupForm_Load(sender, e);
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            try
+            {
+                Classes.GroupLogic.DeleteGroup(groupId);
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: Ошибка в удалении группы");
+            }
         }
     }
 }
