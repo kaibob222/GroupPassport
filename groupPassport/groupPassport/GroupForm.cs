@@ -38,9 +38,16 @@ namespace groupPassport
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            var f = new EditGroupForm(id);
-            f.ShowDialog();
+            if (dataGridView1.RowCount > 0)
+            {
+                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                var f = new EditGroupForm(id);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Группа не выбрана");
+            }
             dataGridView1.DataSource = context.Groups.ToList();
         }
 
