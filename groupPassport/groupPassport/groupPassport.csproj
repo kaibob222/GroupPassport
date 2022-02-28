@@ -93,6 +93,12 @@
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Classes\Group.cs" />
+    <Compile Include="GroupStudentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupStudentsForm.Designer.cs">
+      <DependentUpon>GroupStudentsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202202110207456_m1.cs" />
     <Compile Include="Migrations\202202110207456_m1.designer.cs">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupStudentsForm.resx">
+      <DependentUpon>GroupStudentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202110207456_m1.resx">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>

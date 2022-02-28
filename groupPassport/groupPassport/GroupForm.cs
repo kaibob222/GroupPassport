@@ -67,5 +67,11 @@ namespace groupPassport
                 MessageBox.Show("ERROR: Ошибка в удалении группы");
             }
         }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var f = new GroupStudentsForm();
+            f.ShowDialog();
+        }
     }
 }
