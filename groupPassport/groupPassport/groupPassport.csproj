@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStudentForm.Designer.cs">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Autorization\Autorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,7 @@
     </Compile>
     <Compile Include="Autorization\AutorizationLogic.cs" />
     <Compile Include="Classes\Student.cs" />
+    <Compile Include="Classes\StudentLogic.cs" />
     <Compile Include="EditGroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,7 +89,6 @@
     <Compile Include="AddGroup.Designer.cs">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupLogic.cs" />
     <Compile Include="GroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddStudentForm.resx">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Autorization\Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
     </EmbeddedResource>
