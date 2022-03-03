@@ -69,6 +69,7 @@
       <DependentUpon>AutorizationError.cs</DependentUpon>
     </Compile>
     <Compile Include="Autorization\AutorizationLogic.cs" />
+    <Compile Include="Classes\Teacher.cs" />
     <Compile Include="EditGroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
