@@ -54,5 +54,18 @@ namespace groupPassport
         {
             GroupForm_Load(sender, e);
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            try
+            {
+                Classes.GroupLogic.DeleteGroup(groupId);
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: Ошибка в удалении группы");
+            }
+        }
     }
 }

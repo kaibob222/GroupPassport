@@ -14,5 +14,8 @@ namespace groupPassport.Classes
         public string GroupName { get; set; }
         [Range(2015, 2100)]
         public int Year { get; set; }
+
+        public virtual List<Student> Students { get; set; }
+
     }
 }
