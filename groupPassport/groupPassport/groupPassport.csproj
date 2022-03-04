@@ -106,6 +106,14 @@
     <Compile Include="Migrations\202202280433470_student class.designer.cs">
       <DependentUpon>202202280433470_student class.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203040123241_teacher created.cs" />
+    <Compile Include="Migrations\202203040123241_teacher created.designer.cs">
+      <DependentUpon>202203040123241_teacher created.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203040132374_group changed.cs" />
+    <Compile Include="Migrations\202203040132374_group changed.designer.cs">
+      <DependentUpon>202203040132374_group changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,6 +140,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202280433470_student class.resx">
       <DependentUpon>202202280433470_student class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203040123241_teacher created.resx">
+      <DependentUpon>202203040123241_teacher created.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203040132374_group changed.resx">
+      <DependentUpon>202203040132374_group changed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
