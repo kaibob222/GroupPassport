@@ -57,5 +57,26 @@ namespace groupPassport
                 MessageBox.Show("ERROR: Ошибка в удалении группы");
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                if (comboBox1.SelectedIndex != -1)
+                {
+                    var searchQuery = Classes.GroupLogic.SearchGroup(textBox1.Text, comboBox1.SelectedIndex);
+                    button4.Visible = true;
+                    dataGridView1.DataSource = searchQuery.ToList();
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            comboBox1.SelectedIndex = -1;
+            GroupForm_Load(sender, e);
+            button4.Visible = false;
+        }
     }
 }
