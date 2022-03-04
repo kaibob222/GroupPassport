@@ -101,9 +101,9 @@
     <Compile Include="Migrations\202202110229550_group.designer.cs">
       <DependentUpon>202202110229550_group.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203031333526_teacher.cs" />
-    <Compile Include="Migrations\202203031333526_teacher.designer.cs">
-      <DependentUpon>202203031333526_teacher.cs</DependentUpon>
+    <Compile Include="Migrations\202203031516446_teacher.cs" />
+    <Compile Include="Migrations\202203031516446_teacher.designer.cs">
+      <DependentUpon>202203031516446_teacher.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -135,8 +135,8 @@
     <EmbeddedResource Include="Migrations\202202110229550_group.resx">
       <DependentUpon>202202110229550_group.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203031333526_teacher.resx">
-      <DependentUpon>202203031333526_teacher.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203031516446_teacher.resx">
+      <DependentUpon>202203031516446_teacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

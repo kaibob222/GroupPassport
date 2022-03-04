@@ -13,7 +13,7 @@ namespace groupPassport.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202203031333526_teacher"; }
+            get { return "202203031516446_teacher"; }
         }
         
         string IMigrationMetadata.Source

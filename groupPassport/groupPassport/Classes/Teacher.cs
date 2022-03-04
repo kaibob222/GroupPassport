@@ -8,10 +8,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace groupPassport.Classes
 {
-    class Teacher : Person
+    public class Teacher : Person
     {
-        [MaxLength (20)]
-        public string Position; //Должность
+
+       
+        public enum Position
+        {
+            teacher,
+            director,
+            curator,
+
+        }; //Должность
        
     }
 }
