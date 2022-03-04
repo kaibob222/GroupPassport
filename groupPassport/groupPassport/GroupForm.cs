@@ -19,21 +19,11 @@ namespace groupPassport
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void GroupForm_Load(object sender, EventArgs e)
         {
             var query = from c in context.Groups
                         select new { Id = c.Id, GroupName = c.GroupName, Year = c.Year };
             dataGridView1.DataSource = query.ToList();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
