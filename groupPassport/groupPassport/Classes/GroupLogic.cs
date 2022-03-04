@@ -17,5 +17,17 @@ namespace groupPassport.Classes
             c.Groups.Add(g);
             c.SaveChanges();
         }
+
+        public static void DeleteGroup(int id)
+        {
+            Context context = new Context();
+
+            Group order = context.Groups
+                .Where(o => o.Id == id)
+                .FirstOrDefault();
+
+            context.Groups.Remove(order);
+            context.SaveChanges();
+        }
     }
 }

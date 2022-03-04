@@ -8,11 +8,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace groupPassport.Classes
 {
-    public class Teacher : Person
+    public class Student : Person
     {
-        [MaxLength(20)]
-        public string Position { get; set; } //Должность
-        public virtual List<Group> Groups { get; set; }
-       
+        public int? GroupId { get; set; }
+        [ForeignKey("GroupId")]
+        public Group Group { get; set; }
     }
 }

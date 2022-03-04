@@ -19,21 +19,11 @@ namespace groupPassport
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void GroupForm_Load(object sender, EventArgs e)
         {
             var query = from c in context.Groups
                         select new { Id = c.Id, GroupName = c.GroupName, Year = c.Year };
             dataGridView1.DataSource = query.ToList();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -53,6 +43,19 @@ namespace groupPassport
         private void GroupForm_Activated(object sender, EventArgs e)
         {
             GroupForm_Load(sender, e);
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            try
+            {
+                Classes.GroupLogic.DeleteGroup(groupId);
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: Ошибка в удалении группы");
+            }
         }
     }
 }

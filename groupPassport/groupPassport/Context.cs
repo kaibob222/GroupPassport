@@ -16,9 +16,7 @@ namespace groupPassport
         public DbSet<Person> People { get; set; }
 
         public DbSet<Group> Groups { get; set; }
-
         public DbSet<Teacher> Teachers { get; set; }
-
     }
 
 }
