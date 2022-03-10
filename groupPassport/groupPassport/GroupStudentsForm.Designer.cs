@@ -65,7 +65,7 @@ namespace groupPassport
             // addStudentButton
             // 
             this.addStudentButton.AutoSize = true;
-            this.addStudentButton.Location = new System.Drawing.Point(657, 736);
+            this.addStudentButton.Location = new System.Drawing.Point(620, 736);
             this.addStudentButton.Name = "addStudentButton";
             this.addStudentButton.Size = new System.Drawing.Size(154, 30);
             this.addStudentButton.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace groupPassport
             // editButton
             // 
             this.editButton.AutoSize = true;
-            this.editButton.Location = new System.Drawing.Point(832, 736);
+            this.editButton.Location = new System.Drawing.Point(799, 736);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(154, 30);
             this.editButton.TabIndex = 3;

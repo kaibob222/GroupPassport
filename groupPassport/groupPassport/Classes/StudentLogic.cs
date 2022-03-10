@@ -20,13 +20,13 @@ namespace groupPassport.Classes
             student.Password = "password";
             student.GroupId = groupId;
 
-            C.People.Add(student);
+            C.Students.Add(student);
             C.SaveChanges();
         }
         public static void EditStudent(int id, string fName, string sName, string mName)
         {
             var C = new Context();
-            var student = C.People.Where(c => c.Id == id).FirstOrDefault();
+            var student = C.Students.Where(c => c.Id == id).FirstOrDefault();
 
             student.FirstName = fName;
             student.SurName = sName;
@@ -36,12 +36,14 @@ namespace groupPassport.Classes
             C.SaveChanges();
 
         }
-        public static void DeleteStudent(int id)
+        public static void DeleteStudent(int id, int groupid)
         {
             var C = new Context();
-            var student = C.People.Where(c => c.Id == id).FirstOrDefault();
+            var student = C.Students.Where(c => c.Id == id).FirstOrDefault();
+            student.GroupId = null;
 
-            C.People.Remove(student);
+            C.Entry(student).State = EntityState.Modified;
+
             C.SaveChanges();
         }
     }

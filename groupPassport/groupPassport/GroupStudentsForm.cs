@@ -23,18 +23,19 @@ namespace groupPassport
         private void GroupStudentsForm_Load(object sender, EventArgs e)
         {
             var C = new Context();
-            var group = C.Groups.Where(c => c.Id == id);
-            var data = group
-                .Select(c => c.Students
-                    .Select(con => new { 
-                        Id = con.Id,
-                        FirstName = con.FirstName,
-                        SurName = con.SurName,
-                        MiddleName = con.MiddleName
-                    })).FirstOrDefault();
+            var group = C.Groups.Where(c => c.Id == id).FirstOrDefault();
+            if (group == null)
+            {
+                MessageBox.Show("Группа не найдена");
+                this.Close();
+            }
 
-            groupStudentsData.DataSource = data.ToList();
-            groupNameLabel.Text = "Группа " + group.FirstOrDefault().GroupName;
+            groupStudentsData.DataSource = group.Students;
+            groupNameLabel.Text = "Группа " + group.GroupName;
+            groupStudentsData.Columns[0].Visible = false;
+            groupStudentsData.Columns[1].Visible = false;
+            groupStudentsData.Columns[2].Visible = false;
+
         }
 
         private void addStudentButton_Click(object sender, EventArgs e)
@@ -63,9 +64,9 @@ namespace groupPassport
         {
             if (groupStudentsData.RowCount > 0)
             {
-                int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[0].Value);
+                int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[2].Value);
 
-                StudentLogic.DeleteStudent(studentId);
+                StudentLogic.DeleteStudent(studentId, id);
                 GroupStudentsForm_Load(sender, e);
 
             }
