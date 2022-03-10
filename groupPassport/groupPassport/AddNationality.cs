@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace groupPassport
 {
-    public partial class AddGroup : Form
+    public partial class AddNationality : Form
     {
-        public AddGroup()
+        public AddNationality()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox2.Text != "")
+            if (textBox1.Text != "")
             {
                 try
                 {
-                    Classes.GroupLogic.AddGroup(textBox1.Text, Convert.ToInt32(textBox2.Text));
+                    Classes.Auxilary.AddNationality(textBox1.Text);
                     this.Close();
                 }
                 catch
@@ -35,11 +35,6 @@ namespace groupPassport
             {
                 MessageBox.Show("Введите все данные!");
             }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

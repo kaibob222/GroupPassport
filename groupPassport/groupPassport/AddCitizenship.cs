@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace groupPassport
 {
-    public partial class AddGroup : Form
+    public partial class AddCitizenship : Form
     {
-        public AddGroup()
+        public AddCitizenship()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox2.Text != "")
+            if(textBox1.Text != "")
             {
                 try
                 {
-                    Classes.GroupLogic.AddGroup(textBox1.Text, Convert.ToInt32(textBox2.Text));
+                    Classes.Auxilary.AddCitizenship(textBox1.Text);
                     this.Close();
                 }
                 catch
@@ -37,9 +37,19 @@ namespace groupPassport
             }
         }
 
+        private void AddCitizenship_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddCitizenship_Activated(object sender, EventArgs e)
+        {
+            AddCitizenship_Load(sender, e);
         }
     }
 }

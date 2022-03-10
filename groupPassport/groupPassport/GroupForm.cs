@@ -67,5 +67,17 @@ namespace groupPassport
                 MessageBox.Show("ERROR: Ошибка в удалении группы");
             }
         }
+
+        private void гражданствоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CitizenshipForm form = new CitizenshipForm();
+            form.Show();
+        }
+
+        private void национальностьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NationalityForm form2 = new NationalityForm();
+            form2.Show();
+        }
     }
 }

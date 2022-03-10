@@ -17,6 +17,12 @@ namespace groupPassport
 
         public DbSet<Group> Groups { get; set; }
 
+        public DbSet<Citizenship> Citizenships { get; set; }
+
+        public DbSet<Nationality> Nationalities { get; set; }
+
+        public DbSet<Document> Documents { get; set; }
+
     }
 
 }

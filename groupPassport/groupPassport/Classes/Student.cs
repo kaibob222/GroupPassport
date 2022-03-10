@@ -13,5 +13,6 @@ namespace groupPassport.Classes
         public int? GroupId { get; set; }
         [ForeignKey("GroupId")]
         public Group Group { get; set; }
+        public virtual List<Document> Documents { get; set; }
     }
 }
