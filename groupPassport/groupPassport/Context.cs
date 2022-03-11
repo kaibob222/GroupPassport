@@ -23,6 +23,7 @@ namespace groupPassport
 
         public DbSet<Document> Documents { get; set; }
 
+        public DbSet<Teacher> Teachers { get; set; }
     }
 
 }
