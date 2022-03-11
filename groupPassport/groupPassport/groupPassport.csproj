@@ -83,6 +83,7 @@
     <Compile Include="AddGroup.Designer.cs">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Enums.cs" />
     <Compile Include="GroupLogic.cs" />
     <Compile Include="GroupForm.cs">
       <SubType>Form</SubType>
