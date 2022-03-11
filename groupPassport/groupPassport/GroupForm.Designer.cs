@@ -49,7 +49,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(339, 26);
+            this.label1.Location = new System.Drawing.Point(339, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 0;
@@ -62,7 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 59);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 103);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -76,7 +76,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(700, 396);
+            this.button1.Location = new System.Drawing.Point(699, 440);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 30);
@@ -87,8 +87,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(569, 396);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(568, 440);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 3;
@@ -98,8 +98,8 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(433, 398);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Location = new System.Drawing.Point(432, 442);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(100, 28);
             this.buttonDelete.TabIndex = 4;
@@ -124,26 +124,26 @@
             this.гражданствоToolStripMenuItem,
             this.национальностьToolStripMenuItem});
             this.auxToolStripMenuItem.Name = "auxToolStripMenuItem";
-            this.auxToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.auxToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.auxToolStripMenuItem.Text = "Справочник";
             // 
             // гражданствоToolStripMenuItem
             // 
             this.гражданствоToolStripMenuItem.Name = "гражданствоToolStripMenuItem";
-            this.гражданствоToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.гражданствоToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.гражданствоToolStripMenuItem.Text = "Гражданство";
             this.гражданствоToolStripMenuItem.Click += new System.EventHandler(this.гражданствоToolStripMenuItem_Click);
             // 
             // национальностьToolStripMenuItem
             // 
             this.национальностьToolStripMenuItem.Name = "национальностьToolStripMenuItem";
-            this.национальностьToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.национальностьToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.национальностьToolStripMenuItem.Text = "Национальность";
             this.национальностьToolStripMenuItem.Click += new System.EventHandler(this.национальностьToolStripMenuItem_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(181, 23);
+            this.textBox1.Location = new System.Drawing.Point(173, 31);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(180, 22);
             this.textBox1.TabIndex = 6;
@@ -154,7 +154,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Названию группы",
             "Году поступления"});
-            this.comboBox1.Location = new System.Drawing.Point(381, 23);
+            this.comboBox1.Location = new System.Drawing.Point(373, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(170, 24);
             this.comboBox1.TabIndex = 7;
@@ -162,24 +162,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(570, 23);
+            this.button3.Location = new System.Drawing.Point(562, 31);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
             this.button3.Text = "Поиск";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(670, 23);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Сброс";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // studentsButton
             // 
@@ -192,6 +181,17 @@
             this.studentsButton.UseVisualStyleBackColor = true;
             this.studentsButton.Click += new System.EventHandler(this.studentsButton_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(662, 31);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Сброс";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // GroupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -201,7 +201,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
-            //this.ClientSize = new System.Drawing.Size(900, 563);
             this.Controls.Add(this.studentsButton);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.button2);
