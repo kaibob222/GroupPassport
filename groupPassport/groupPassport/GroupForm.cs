@@ -61,6 +61,7 @@ namespace groupPassport
         private void GroupForm_Activated(object sender, EventArgs e)
         {
             GroupForm_Load(sender, e);
+            button4_Click(sender, e);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
