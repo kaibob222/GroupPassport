@@ -56,6 +56,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddExistStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddExistStudentForm.Designer.cs">
+      <DependentUpon>AddExistStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStudentForm.Designer.cs">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddCitizenship.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +117,7 @@
     <Compile Include="DocumentForm.Designer.cs">
       <DependentUpon>DocumentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\StudentLogic.cs" />
     <Compile Include="EditGroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +142,12 @@
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Classes\Group.cs" />
+    <Compile Include="GroupStudentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupStudentsForm.Designer.cs">
+      <DependentUpon>GroupStudentsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202202110207456_m1.cs" />
     <Compile Include="Migrations\202202110207456_m1.designer.cs">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>
@@ -171,6 +190,12 @@
     <EmbeddedResource Include="AddNationality.resx">
       <DependentUpon>AddNationality.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddExistStudentForm.resx">
+      <DependentUpon>AddExistStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStudentForm.resx">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Autorization\Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupStudentsForm.resx">
+      <DependentUpon>GroupStudentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202110207456_m1.resx">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>

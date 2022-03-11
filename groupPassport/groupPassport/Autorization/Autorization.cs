@@ -59,5 +59,10 @@ namespace groupPassport
                 this.Show();
             }
         }
+
+        private void Autorization_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

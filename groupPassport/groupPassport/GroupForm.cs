@@ -38,10 +38,18 @@ namespace groupPassport
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            var f = new EditGroupForm(id);
-            f.ShowDialog();
-            dataGridView1.DataSource = context.Groups.ToList();
+            if (dataGridView1.RowCount > 0) { 
+                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                var f = new EditGroupForm(id);
+                f.ShowDialog();
+                dataGridView1.DataSource = context.Groups.ToList();
+
+            }
+            else
+            {
+                MessageBox.Show("Нет групп");
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,6 +73,37 @@ namespace groupPassport
             catch
             {
                 MessageBox.Show("ERROR: Ошибка в удалении группы");
+            }
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+            var f = new GroupStudentsForm(groupId);
+            f.ShowDialog();
+        }
+
+        private void studentsButton_Click(object sender, EventArgs e)
+        {
+            int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+            var f = new GroupStudentsForm(groupId);
+            f.ShowDialog();
+        }
+
+        private void click(object sender, EventArgs e)
+        {
+            int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+            try
+            {
+                var f = new GroupStudentsForm(groupId);
+                f.ShowDialog();
+            }
+            catch
+            {
+
             }
         }
 
