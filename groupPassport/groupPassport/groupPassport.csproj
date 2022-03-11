@@ -149,17 +149,9 @@
     <Compile Include="Migrations\202203040132374_group changed.designer.cs">
       <DependentUpon>202203040132374_group changed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203031454104_citizenship.cs" />
-    <Compile Include="Migrations\202203031454104_citizenship.designer.cs">
-      <DependentUpon>202203031454104_citizenship.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203031502302_nationality.cs" />
-    <Compile Include="Migrations\202203031502302_nationality.designer.cs">
-      <DependentUpon>202203031502302_nationality.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203040111003_document.cs" />
-    <Compile Include="Migrations\202203040111003_document.designer.cs">
-      <DependentUpon>202203040111003_document.cs</DependentUpon>
+    <Compile Include="Migrations\202203110142543_auxx_migration.cs" />
+    <Compile Include="Migrations\202203110142543_auxx_migration.designer.cs">
+      <DependentUpon>202203110142543_auxx_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NationalityForm.cs">
@@ -215,14 +207,8 @@
     <EmbeddedResource Include="Migrations\202203040132374_group changed.resx">
       <DependentUpon>202203040132374_group changed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203031454104_citizenship.resx">
-      <DependentUpon>202203031454104_citizenship.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203031502302_nationality.resx">
-      <DependentUpon>202203031502302_nationality.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203040111003_document.resx">
-      <DependentUpon>202203040111003_document.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203110142543_auxx_migration.resx">
+      <DependentUpon>202203110142543_auxx_migration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NationalityForm.resx">
       <DependentUpon>NationalityForm.cs</DependentUpon>
