@@ -40,9 +40,16 @@ namespace groupPassport.Classes
             }
             else
             {
-                int year = Convert.ToInt32(text);
-                var searchGroup = context.Groups.Where(c => c.Year == year);
-                return searchGroup;
+                try
+                {
+                    int year = Convert.ToInt32(text);
+                    var searchGroup = context.Groups.Where(c => c.Year == year);
+                    return searchGroup;
+                }
+                catch
+                {
+                    throw new Exception("Ошибка");
+                }
             }
         }
     }

@@ -109,12 +109,13 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Название группы",
-            "Год поступления"});
+            "Названию группы",
+            "Году поступления"});
             this.comboBox1.Location = new System.Drawing.Point(381, 23);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(170, 24);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "Поиск по...";
             // 
             // button3
             // 

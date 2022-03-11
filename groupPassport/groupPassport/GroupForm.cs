@@ -64,9 +64,16 @@ namespace groupPassport
             {
                 if (comboBox1.SelectedIndex != -1)
                 {
-                    var searchQuery = Classes.GroupLogic.SearchGroup(textBox1.Text, comboBox1.SelectedIndex);
-                    button4.Visible = true;
-                    dataGridView1.DataSource = searchQuery.ToList();
+                    try
+                    {
+                        var searchQuery = Classes.GroupLogic.SearchGroup(textBox1.Text, comboBox1.SelectedIndex);
+                        button4.Visible = true;
+                        dataGridView1.DataSource = searchQuery.ToList();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ошибка в поиске");
+                    }
                 }
             }
         }
@@ -75,6 +82,7 @@ namespace groupPassport
         {
             textBox1.Text = "";
             comboBox1.SelectedIndex = -1;
+            comboBox1.Text = "Поиск по...";
             GroupForm_Load(sender, e);
             button4.Visible = false;
         }
