@@ -99,7 +99,7 @@ namespace groupPassport
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(390, 664);
+            this.applyButton.Location = new System.Drawing.Point(580, 664);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(148, 31);
             this.applyButton.TabIndex = 7;
@@ -109,7 +109,7 @@ namespace groupPassport
             // 
             // dropButton
             // 
-            this.dropButton.Location = new System.Drawing.Point(602, 664);
+            this.dropButton.Location = new System.Drawing.Point(408, 664);
             this.dropButton.Name = "dropButton";
             this.dropButton.Size = new System.Drawing.Size(148, 31);
             this.dropButton.TabIndex = 8;

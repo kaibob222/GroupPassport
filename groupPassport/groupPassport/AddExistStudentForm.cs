@@ -23,7 +23,7 @@ namespace groupPassport
         private void AddExistStudentForm_Load(object sender, EventArgs e)
         {
             var C = new Context();
-            studentsComboBox.DataSource = C.Students.Where(c => c.GroupId != groupId).Select(c => c.Id + " " + c.SurName + " " + c.FirstName + " " + c.MiddleName).ToList();
+            studentsComboBox.DataSource = C.Students.Where(c => c.GroupId != groupId).Select(c => c.Id + " - " + c.SurName + " " + c.FirstName + " " + c.MiddleName).ToList();
             studentsComboBox.SelectedItem = null;
         }
 
@@ -35,6 +35,10 @@ namespace groupPassport
                 studentId = Convert.ToInt32(studentsComboBox.SelectedItem.ToString().Split(' ')[0]);
                 StudentLogic.AddExistStudent(studentId, groupId);
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Выберите студента");
             }
         }
     }
