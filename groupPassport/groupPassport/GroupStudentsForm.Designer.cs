@@ -34,6 +34,7 @@ namespace groupPassport
             this.addStudentButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.AddExistStudentButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.groupStudentsData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@ namespace groupPassport
             this.addStudentButton.Name = "addStudentButton";
             this.addStudentButton.Size = new System.Drawing.Size(154, 30);
             this.addStudentButton.TabIndex = 2;
-            this.addStudentButton.Text = "Добавить";
+            this.addStudentButton.Text = "Создать";
             this.addStudentButton.UseVisualStyleBackColor = true;
             this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
             // 
@@ -95,11 +96,23 @@ namespace groupPassport
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // AddExistStudentButton
+            // 
+            this.AddExistStudentButton.AutoSize = true;
+            this.AddExistStudentButton.Location = new System.Drawing.Point(16, 736);
+            this.AddExistStudentButton.Name = "AddExistStudentButton";
+            this.AddExistStudentButton.Size = new System.Drawing.Size(169, 30);
+            this.AddExistStudentButton.TabIndex = 5;
+            this.AddExistStudentButton.Text = "Добавить студента";
+            this.AddExistStudentButton.UseVisualStyleBackColor = true;
+            this.AddExistStudentButton.Click += new System.EventHandler(this.AddExistStudentButton_Click);
+            // 
             // GroupStudentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 796);
+            this.Controls.Add(this.AddExistStudentButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addStudentButton);
@@ -122,5 +135,6 @@ namespace groupPassport
         private System.Windows.Forms.Button addStudentButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button AddExistStudentButton;
     }
 }

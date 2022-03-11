@@ -39,12 +39,6 @@ namespace groupPassport
                     mNameTextBox.Text = student.MiddleName;
                 }
                 dropButton.Visible = true;
-                studentsComboBox.Visible = false;
-            }
-            else
-            {
-                studentsComboBox.DataSource = C.Students.Where(c => c.GroupId != groupId).Select(c => c.Id + " " + c.SurName + " " + c.FirstName + " " + c.MiddleName ).ToList();
-                studentsComboBox.SelectedItem = null;
             }
         }
 
@@ -54,15 +48,7 @@ namespace groupPassport
             string sName = sNameTextBox.Text;
             string mName = mNameTextBox.Text;
 
-            if (studentsComboBox.SelectedItem != null)
-            {              
-                studentId = Convert.ToInt32(studentsComboBox.SelectedItem.ToString().Split(' ')[0]);
-                StudentLogic.AddExistStudent(studentId, groupId);
-                this.Close();
-
-            }
-
-            else if (fName != "" && sName != "" && mName != "") {
+            if (fName != "" && sName != "" && mName != "") {
                 if (!isEditing)
                 {
                     StudentLogic.AddStudent(fName,

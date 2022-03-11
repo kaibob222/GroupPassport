@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddExistStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddExistStudentForm.Designer.cs">
+      <DependentUpon>AddExistStudentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddExistStudentForm.resx">
+      <DependentUpon>AddExistStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </EmbeddedResource>

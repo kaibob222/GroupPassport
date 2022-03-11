@@ -48,7 +48,7 @@ namespace groupPassport
         private void editButton_Click(object sender, EventArgs e)
         {
             if (groupStudentsData.RowCount > 0) { 
-                int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[0].Value);
+                int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[2].Value);
 
                 var f = new AddStudentForm(id, true, studentId);
                 f.ShowDialog();
@@ -75,6 +75,13 @@ namespace groupPassport
                 MessageBox.Show("Нет студентов");
             }
 
+        }
+
+        private void AddExistStudentButton_Click(object sender, EventArgs e)
+        {
+            var f = new AddExistStudentForm(id);
+            f.ShowDialog();
+            GroupStudentsForm_Load(sender, e);
         }
     }
 }
