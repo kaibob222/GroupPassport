@@ -38,6 +38,8 @@ namespace groupPassport
             this.label4 = new System.Windows.Forms.Label();
             this.applyButton = new System.Windows.Forms.Button();
             this.dropButton = new System.Windows.Forms.Button();
+            this.studentsComboBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -99,7 +101,7 @@ namespace groupPassport
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(68, 341);
+            this.applyButton.Location = new System.Drawing.Point(390, 664);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(148, 31);
             this.applyButton.TabIndex = 7;
@@ -109,7 +111,7 @@ namespace groupPassport
             // 
             // dropButton
             // 
-            this.dropButton.Location = new System.Drawing.Point(280, 341);
+            this.dropButton.Location = new System.Drawing.Point(602, 664);
             this.dropButton.Name = "dropButton";
             this.dropButton.Size = new System.Drawing.Size(148, 31);
             this.dropButton.TabIndex = 8;
@@ -118,11 +120,30 @@ namespace groupPassport
             this.dropButton.Visible = false;
             this.dropButton.Click += new System.EventHandler(this.dropButton_Click);
             // 
+            // studentsComboBox
+            // 
+            this.studentsComboBox.FormattingEnabled = true;
+            this.studentsComboBox.Location = new System.Drawing.Point(68, 464);
+            this.studentsComboBox.Name = "studentsComboBox";
+            this.studentsComboBox.Size = new System.Drawing.Size(292, 28);
+            this.studentsComboBox.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(64, 417);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(151, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Выбрать студента";
+            // 
             // AddStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 733);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.studentsComboBox);
             this.Controls.Add(this.dropButton);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.label4);
@@ -151,5 +172,7 @@ namespace groupPassport
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.Button dropButton;
+        private System.Windows.Forms.ComboBox studentsComboBox;
+        private System.Windows.Forms.Label label5;
     }
 }

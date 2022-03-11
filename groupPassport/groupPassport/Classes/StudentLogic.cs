@@ -23,6 +23,16 @@ namespace groupPassport.Classes
             C.Students.Add(student);
             C.SaveChanges();
         }
+        public static void AddExistStudent(int id, int groupId)
+        {
+            var C = new Context();
+            var student = C.Students.Where(c => c.Id == id).FirstOrDefault();
+            student.GroupId = groupId;
+
+            C.Entry(student).State = EntityState.Modified;
+            C.SaveChanges();
+
+        }
         public static void EditStudent(int id, string fName, string sName, string mName)
         {
             var C = new Context();
