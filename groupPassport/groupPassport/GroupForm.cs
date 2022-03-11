@@ -76,6 +76,35 @@ namespace groupPassport
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                if (comboBox1.SelectedIndex != -1)
+                {
+                    try
+                    {
+                        var searchQuery = Classes.GroupLogic.SearchGroup(textBox1.Text, comboBox1.SelectedIndex);
+                        button4.Visible = true;
+                        dataGridView1.DataSource = searchQuery.ToList();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ошибка в поиске");
+                    }
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            comboBox1.SelectedIndex = -1;
+            comboBox1.Text = "Поиск по...";
+            GroupForm_Load(sender, e);
+            button4.Visible = false;
+        }
+
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);

@@ -31,6 +31,29 @@ namespace groupPassport.Classes
             context.SaveChanges();
         }
 
+        public static IQueryable<Group> SearchGroup(string text, int comboBoxValue)
+        {
+            Context context = new Context();
+            if (comboBoxValue == 0)
+            {
+                var searchGroup = context.Groups.Where(c => c.GroupName == text);
+                return searchGroup;
+            }
+            else
+            {
+                try
+                {
+                    int year = Convert.ToInt32(text);
+                    var searchGroup = context.Groups.Where(c => c.Year == year);
+                    return searchGroup;
+                }
+                catch
+                {
+                    throw new Exception("Ошибка");
+                }
+            }
+        }
+
         static public Group DropEditData(Context C, int id)
         {
             var group = C.Groups.Where(c => c.Id == id).FirstOrDefault();
