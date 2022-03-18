@@ -7,23 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using groupPassport.Classes;
 
 namespace groupPassport
 {
-    public partial class AddGroup : Form
+    public partial class AddDocument : Form
     {
-        public AddGroup()
+        public Student student { get; set; }
+        public AddDocument()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox2.Text != "")
+            if (student != null && textBox2.Text.Length>0 && comboBox1.SelectedIndex>=0)
             {
                 try
                 {
-                    Classes.GroupLogic.AddGroup(textBox1.Text, Convert.ToInt32(textBox2.Text));
+                    Classes.Auxilary.AddDocument(textBox2.Text, comboBox1.SelectedValue.ToString(), student.Id);
                     this.Close();
                 }
                 catch
@@ -35,9 +37,25 @@ namespace groupPassport
             {
                 MessageBox.Show("Введите все данные!");
             }
+            AddDocument_Load(sender, e);
+        }
+
+        private void AddDocument_Load(object sender, EventArgs e)
+        {
+            comboBox1.DataSource = Enum.GetValues(typeof(DocumentType));
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
