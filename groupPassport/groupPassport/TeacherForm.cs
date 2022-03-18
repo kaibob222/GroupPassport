@@ -38,9 +38,8 @@ namespace groupPassport
 
         private void TeacherForm_Load(object sender, EventArgs e)
         {
-            var query = from c in context.Teachers
-                        select new { Id = c.Id, FirstName = c.FirstName, Surname = c.SurName, MiddleName = c.MiddleName };
-            dataGridView1.DataSource = query.ToList();
+            Context c = new Context();
+            dataGridView1.DataSource = c.Teachers.ToList();
         }
     }
 }
