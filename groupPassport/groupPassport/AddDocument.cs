@@ -13,6 +13,7 @@ namespace groupPassport
 {
     public partial class AddDocument : Form
     {
+        public Student student { get; set; }
         public AddDocument()
         {
             InitializeComponent();
@@ -20,11 +21,11 @@ namespace groupPassport
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text != "")
+            if (student != null && textBox2.Text.Length>0 && comboBox1.SelectedIndex>=0)
             {
                 try
                 {
-                    Classes.Auxilary.AddDocument(textBox2.Text, comboBox1.SelectedValue.ToString(), Convert.ToInt32(textBox1.Text));
+                    Classes.Auxilary.AddDocument(textBox2.Text, comboBox1.SelectedValue.ToString(), student.Id);
                     this.Close();
                 }
                 catch

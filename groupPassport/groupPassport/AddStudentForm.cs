@@ -16,6 +16,7 @@ namespace groupPassport
         int groupId;
         bool isEditing = false;
         int studentId;
+        Student student;
 
         public AddStudentForm(int id, bool mode = false, int studId = -1)
         {
@@ -31,7 +32,7 @@ namespace groupPassport
 
             if (isEditing)
             {
-                var student = C.People.Where(c => c.Id == studentId).FirstOrDefault();
+                student = C.Students.Where(c => c.Id == studentId).FirstOrDefault();
                 if (student != null)
                 {
                     fNameTextBox.Text = student.FirstName;
@@ -79,6 +80,7 @@ namespace groupPassport
         private void button1_Click(object sender, EventArgs e)
         {
             DocumentForm docf = new DocumentForm();
+            docf.Student = student;
             docf.Show();
             AddStudentForm_Load(sender, e);
         }
