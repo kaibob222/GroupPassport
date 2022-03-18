@@ -37,9 +37,11 @@ namespace groupPassport
                     fNameTextBox.Text = student.FirstName;
                     sNameTextBox.Text = student.SurName;
                     mNameTextBox.Text = student.MiddleName;
+                    
                 }
                 dropButton.Visible = true;
             }
+            button1.Visible = isEditing;
         }
 
         private void applyButton_Click(object sender, EventArgs e)
@@ -71,6 +73,13 @@ namespace groupPassport
 
         private void dropButton_Click(object sender, EventArgs e)
         {
+            AddStudentForm_Load(sender, e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DocumentForm docf = new DocumentForm();
+            docf.Show();
             AddStudentForm_Load(sender, e);
         }
     }

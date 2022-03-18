@@ -36,6 +36,7 @@ namespace groupPassport
             {
                 MessageBox.Show("Введите все данные!");
             }
+            AddDocument_Load(sender, e);
         }
 
         private void AddDocument_Load(object sender, EventArgs e)
@@ -49,6 +50,11 @@ namespace groupPassport
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -38,70 +38,75 @@ namespace groupPassport
             this.label4 = new System.Windows.Forms.Label();
             this.applyButton = new System.Windows.Forms.Button();
             this.dropButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 49);
+            this.label1.Location = new System.Drawing.Point(57, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 20);
+            this.label1.Size = new System.Drawing.Size(181, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Введите данные студента";
             // 
             // fNameTextBox
             // 
-            this.fNameTextBox.Location = new System.Drawing.Point(231, 138);
+            this.fNameTextBox.Location = new System.Drawing.Point(205, 110);
+            this.fNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fNameTextBox.Name = "fNameTextBox";
-            this.fNameTextBox.Size = new System.Drawing.Size(292, 26);
+            this.fNameTextBox.Size = new System.Drawing.Size(260, 22);
             this.fNameTextBox.TabIndex = 1;
             // 
             // sNameTextBox
             // 
-            this.sNameTextBox.Location = new System.Drawing.Point(231, 190);
+            this.sNameTextBox.Location = new System.Drawing.Point(205, 152);
+            this.sNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sNameTextBox.Name = "sNameTextBox";
-            this.sNameTextBox.Size = new System.Drawing.Size(292, 26);
+            this.sNameTextBox.Size = new System.Drawing.Size(260, 22);
             this.sNameTextBox.TabIndex = 2;
             // 
             // mNameTextBox
             // 
-            this.mNameTextBox.Location = new System.Drawing.Point(231, 243);
+            this.mNameTextBox.Location = new System.Drawing.Point(205, 194);
+            this.mNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mNameTextBox.Name = "mNameTextBox";
-            this.mNameTextBox.Size = new System.Drawing.Size(292, 26);
+            this.mNameTextBox.Size = new System.Drawing.Size(260, 22);
             this.mNameTextBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 143);
+            this.label2.Location = new System.Drawing.Point(60, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 20);
+            this.label2.Size = new System.Drawing.Size(35, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Имя";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 196);
+            this.label3.Location = new System.Drawing.Point(60, 157);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 20);
+            this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Фамилия";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 249);
+            this.label4.Location = new System.Drawing.Point(60, 199);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.Size = new System.Drawing.Size(71, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Отчество";
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(580, 664);
+            this.applyButton.Location = new System.Drawing.Point(516, 531);
+            this.applyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(148, 31);
+            this.applyButton.Size = new System.Drawing.Size(132, 25);
             this.applyButton.TabIndex = 7;
             this.applyButton.Text = "Применить";
             this.applyButton.UseVisualStyleBackColor = true;
@@ -109,20 +114,32 @@ namespace groupPassport
             // 
             // dropButton
             // 
-            this.dropButton.Location = new System.Drawing.Point(408, 664);
+            this.dropButton.Location = new System.Drawing.Point(363, 531);
+            this.dropButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dropButton.Name = "dropButton";
-            this.dropButton.Size = new System.Drawing.Size(148, 31);
+            this.dropButton.Size = new System.Drawing.Size(132, 25);
             this.dropButton.TabIndex = 8;
             this.dropButton.Text = "Сбросить";
             this.dropButton.UseVisualStyleBackColor = true;
             this.dropButton.Visible = false;
             this.dropButton.Click += new System.EventHandler(this.dropButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(251, 531);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 25);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "документ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AddStudentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 733);
+            this.ClientSize = new System.Drawing.Size(711, 586);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dropButton);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.label4);
@@ -132,6 +149,7 @@ namespace groupPassport
             this.Controls.Add(this.sNameTextBox);
             this.Controls.Add(this.fNameTextBox);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddStudentForm";
             this.Text = "AddStudentForm";
             this.Load += new System.EventHandler(this.AddStudentForm_Load);
@@ -151,5 +169,6 @@ namespace groupPassport
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.Button dropButton;
+        private System.Windows.Forms.Button button1;
     }
 }
