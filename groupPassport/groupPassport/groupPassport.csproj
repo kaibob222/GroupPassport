@@ -168,15 +168,17 @@
     <Compile Include="Migrations\202203040132374_group changed.designer.cs">
       <DependentUpon>202203040132374_group changed.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Migrations\202203040203445_ChangedTeacher.cs" />
     <Compile Include="Migrations\202203040203445_ChangedTeacher.designer.cs">
       <DependentUpon>202203040203445_ChangedTeacher.cs</DependentUpon>
-
+    </Compile>
     <Compile Include="Migrations\202203110142543_auxx_migration.cs" />
     <Compile Include="Migrations\202203110142543_auxx_migration.designer.cs">
       <DependentUpon>202203110142543_auxx_migration.cs</DependentUpon>
-
+    </Compile>
+    <Compile Include="Migrations\202203241037515_migration.cs" />
+    <Compile Include="Migrations\202203241037515_migration.designer.cs">
+      <DependentUpon>202203241037515_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NationalityForm.cs">
@@ -264,8 +266,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203040203445_ChangedTeacher.resx">
       <DependentUpon>202203040203445_ChangedTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203110142543_auxx_migration.resx">
       <DependentUpon>202203110142543_auxx_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203241037515_migration.resx">
+      <DependentUpon>202203241037515_migration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NationalityForm.resx">
       <DependentUpon>NationalityForm.cs</DependentUpon>
@@ -278,6 +284,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TeacherForms\AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
@@ -304,7 +311,12 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

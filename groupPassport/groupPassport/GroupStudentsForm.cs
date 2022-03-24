@@ -83,5 +83,67 @@ namespace groupPassport
             f.ShowDialog();
             GroupStudentsForm_Load(sender, e);
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bookTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int num = -1;
+            try
+            {
+                num = Convert.ToInt32(bookTextBox.Text);    
+            }
+            catch
+            {
+                MessageBox.Show("Неправильный формат");
+            }
+
+            if (num > -1)
+            {
+                var students = StudentLogic.FilterBookStudent(num, id);
+
+                groupStudentsData.DataSource = students;
+                groupStudentsData.Columns[0].Visible = false;
+                groupStudentsData.Columns[1].Visible = false;
+                groupStudentsData.Columns[2].Visible = false;
+            }        
+        }
+
+        private void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string s = nameTextBox.Text;
+            if (s != "") {
+                var students = StudentLogic.FilterNameStudent(s, id);
+
+                groupStudentsData.DataSource = students;
+                groupStudentsData.Columns[0].Visible = false;
+                groupStudentsData.Columns[1].Visible = false;
+                groupStudentsData.Columns[2].Visible = false;
+            }
+            else
+            {
+                GroupStudentsForm_Load(sender, e);
+            }
+        }
+
+        private void dropButton_Click(object sender, EventArgs e)
+        {
+            nameTextBox.Text = "";
+            birthDateTimePicker.Value = DateTime.Today;
+
+            GroupStudentsForm_Load(sender, e);
+        }
+
+        private void birthDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime date = birthDateTimePicker.Value;
+            if (date != DateTime.Today)
+            {
+                StudentLogic.FilterDateStudent(date, id);
+            }
+        }
     }
 }
