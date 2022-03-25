@@ -114,6 +114,10 @@
     <Compile Include="Migrations\202203040132374_group changed.designer.cs">
       <DependentUpon>202203040132374_group changed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203250048319_m2.cs" />
+    <Compile Include="Migrations\202203250048319_m2.designer.cs">
+      <DependentUpon>202203250048319_m2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203040132374_group changed.resx">
       <DependentUpon>202203040132374_group changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203250048319_m2.resx">
+      <DependentUpon>202203250048319_m2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
