@@ -168,16 +168,17 @@
     <Compile Include="Migrations\202203040132374_group changed.designer.cs">
       <DependentUpon>202203040132374_group changed.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Migrations\202203040203445_ChangedTeacher.cs" />
     <Compile Include="Migrations\202203040203445_ChangedTeacher.designer.cs">
       <DependentUpon>202203040203445_ChangedTeacher.cs</DependentUpon>
-      
     </Compile>
     <Compile Include="Migrations\202203110142543_auxx_migration.cs" />
     <Compile Include="Migrations\202203110142543_auxx_migration.designer.cs">
       <DependentUpon>202203110142543_auxx_migration.cs</DependentUpon>
-
+    </Compile>
+    <Compile Include="Migrations\202203250116000_strange.cs" />
+    <Compile Include="Migrations\202203250116000_strange.designer.cs">
+      <DependentUpon>202203250116000_strange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202203250048319_m2.cs" />
     <Compile Include="Migrations\202203250048319_m2.designer.cs">
@@ -269,9 +270,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203040203445_ChangedTeacher.resx">
       <DependentUpon>202203040203445_ChangedTeacher.cs</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203110142543_auxx_migration.resx">
       <DependentUpon>202203110142543_auxx_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203250116000_strange.resx">
+      <DependentUpon>202203250116000_strange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NationalityForm.resx">
       <DependentUpon>NationalityForm.cs</DependentUpon>
