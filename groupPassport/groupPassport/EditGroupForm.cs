@@ -31,7 +31,7 @@ namespace groupPassport
 
         private void drop_Click(object sender, EventArgs e)
         {
-            var g = GroupLogic.drop(C, id);
+            var g = GroupLogic.DropEditData(C, id);
 
             groupName.Text = g.GroupName;
             year.SelectedIndex = (g.Year - startYear);
@@ -39,7 +39,7 @@ namespace groupPassport
 
         private void apply_Click(object sender, EventArgs e)
         {
-            GroupLogic.apply(C, id, groupName.Text, Convert.ToInt32(year.SelectedItem));
+            GroupLogic.ApplyEditChanges(C, id, groupName.Text, Convert.ToInt32(year.SelectedItem));
 
             this.Close();
         }
@@ -48,12 +48,6 @@ namespace groupPassport
         {
             C = new Context();
             group = C.Groups.Where(c => c.Id == id).FirstOrDefault();
-
-            if (group == null)
-            {
-                MessageBox.Show("Группа не найдена");
-                this.Close();
-            }
 
             groupName.Text = group.GroupName;
             year.SelectedIndex = (group.Year - startYear);

@@ -36,10 +36,5 @@ namespace groupPassport
                 MessageBox.Show("Введите все данные!");
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

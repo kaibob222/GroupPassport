@@ -17,5 +17,10 @@ namespace groupPassport.Classes
         public int Year { get; set; }
         public virtual List<Student> Students { get; set; }
         public virtual List<Teacher> Teachers { get; set; }
+
+        public override string ToString()
+        {
+            return GroupName;
+        }
     }
 }

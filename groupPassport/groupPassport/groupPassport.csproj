@@ -56,6 +56,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddExistStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddExistStudentForm.Designer.cs">
+      <DependentUpon>AddExistStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStudentForm.Designer.cs">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCitizenship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCitizenship.Designer.cs">
+      <DependentUpon>AddCitizenship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDocument.Designer.cs">
+      <DependentUpon>AddDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNationality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNationality.Designer.cs">
+      <DependentUpon>AddNationality.cs</DependentUpon>
+    </Compile>
     <Compile Include="Autorization\Autorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,8 +99,26 @@
       <DependentUpon>AutorizationError.cs</DependentUpon>
     </Compile>
     <Compile Include="Autorization\AutorizationLogic.cs" />
+    <Compile Include="Classes\Attributes.cs" />
+    <Compile Include="CitizenshipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CitizenshipForm.Designer.cs">
+      <DependentUpon>CitizenshipForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Auxilary.cs" />
+    <Compile Include="Classes\Citizenship.cs" />
+    <Compile Include="Classes\Document.cs" />
+    <Compile Include="Classes\Nationality.cs" />
     <Compile Include="Classes\Teacher.cs" />
     <Compile Include="Classes\Student.cs" />
+    <Compile Include="DocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentForm.Designer.cs">
+      <DependentUpon>DocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\StudentLogic.cs" />
     <Compile Include="EditGroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,7 +131,7 @@
     <Compile Include="AddGroup.Designer.cs">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupLogic.cs" />
+    <Compile Include="Classes\Enums.cs" />
     <Compile Include="GroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +142,12 @@
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Classes\Group.cs" />
+    <Compile Include="GroupStudentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupStudentsForm.Designer.cs">
+      <DependentUpon>GroupStudentsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202202110207456_m1.cs" />
     <Compile Include="Migrations\202202110207456_m1.designer.cs">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>
@@ -114,18 +168,76 @@
     <Compile Include="Migrations\202203040132374_group changed.designer.cs">
       <DependentUpon>202203040132374_group changed.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="Migrations\202203040203445_ChangedTeacher.cs" />
+    <Compile Include="Migrations\202203040203445_ChangedTeacher.designer.cs">
+      <DependentUpon>202203040203445_ChangedTeacher.cs</DependentUpon>
+
+    <Compile Include="Migrations\202203110142543_auxx_migration.cs" />
+    <Compile Include="Migrations\202203110142543_auxx_migration.designer.cs">
+      <DependentUpon>202203110142543_auxx_migration.cs</DependentUpon>
+
+    </Compile>
     <Compile Include="Migrations\202203250048319_m2.cs" />
     <Compile Include="Migrations\202203250048319_m2.designer.cs">
       <DependentUpon>202203250048319_m2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NationalityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NationalityForm.Designer.cs">
+      <DependentUpon>NationalityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeacherForms\AddTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherForms\AddTeacher.Designer.cs">
+      <DependentUpon>AddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherForms\AddTeacherLogic.cs" />
+    <Compile Include="TeacherForms\DeleteTeacherLogic.cs" />
+    <Compile Include="TeacherForms\EditTeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherForms\EditTeacherForm.Designer.cs">
+      <DependentUpon>EditTeacherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherForms\EditTeacherLogic.cs" />
+    <Compile Include="TeacherForms\TeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherForms\TeacherForm.Designer.cs">
+      <DependentUpon>TeacherForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddCitizenship.resx">
+      <DependentUpon>AddCitizenship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDocument.resx">
+      <DependentUpon>AddDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNationality.resx">
+      <DependentUpon>AddNationality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddExistStudentForm.resx">
+      <DependentUpon>AddExistStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStudentForm.resx">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Autorization\Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Autorization\AutorizationError.resx">
       <DependentUpon>AutorizationError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CitizenshipForm.resx">
+      <DependentUpon>CitizenshipForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentForm.resx">
+      <DependentUpon>DocumentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditGroupForm.resx">
       <DependentUpon>EditGroupForm.cs</DependentUpon>
@@ -135,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupStudentsForm.resx">
+      <DependentUpon>GroupStudentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202110207456_m1.resx">
       <DependentUpon>202202110207456_m1.cs</DependentUpon>
@@ -151,6 +266,14 @@
     <EmbeddedResource Include="Migrations\202203040132374_group changed.resx">
       <DependentUpon>202203040132374_group changed.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203040203445_ChangedTeacher.resx">
+      <DependentUpon>202203040203445_ChangedTeacher.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203110142543_auxx_migration.resx">
+      <DependentUpon>202203110142543_auxx_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NationalityForm.resx">
+      <DependentUpon>NationalityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203250048319_m2.resx">
       <DependentUpon>202203250048319_m2.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +286,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TeacherForms\AddTeacher.resx">
+      <DependentUpon>AddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherForms\EditTeacherForm.resx">
+      <DependentUpon>EditTeacherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherForms\TeacherForm.resx">
+      <DependentUpon>TeacherForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
