@@ -104,12 +104,18 @@ namespace groupPassport.Classes
             return null;
         }
 
-        public static List<Student> FilterBookStudent(string num, int groupId)
+        public static List<Student> FilterBookStudent(string s, int groupId)
         {
             var C = new Context();
-            string bookNum = num.ToString();
 
-            //var filteredStudents = C.Students.Where(c => c.GroupId == groupId && c.num.ToString().StartWith(num)).ToList();
+            if (!s.EndsWith(" "))
+            {
+                //var filteredStudents = C.Students.Where(c => c.GroupId == groupId && c.num.ToString().StartWith(s)).ToList();
+            }
+            else
+            {
+                //var filteredStudents = C.Students.Where(c => c.GroupId == groupId && c.num.ToString() == s.Split(' ')[0]).ToList();
+            }
             return null;
         }
     }

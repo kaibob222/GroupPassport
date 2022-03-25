@@ -86,17 +86,24 @@ namespace groupPassport
             if (bookTextBox.Text != "") { 
             try
             {
-                num = Convert.ToInt32(bookTextBox.Text);
+                string s = bookTextBox.Text;
+                var arr = s.Split(' ').ToList();
+                arr.Remove("");
+                if (arr.Count == 1)
+                {
+                    num = Convert.ToInt32(arr[0]);
+                }
+                else throw new Exception();
             }
             catch
             {
-                MessageBox.Show("Неправильны формат номера зачетной книжки");
+                MessageBox.Show("Неправильный формат номера зачетной книжки");
             }
             }
 
-                if (num > -1)
+            if (num > -1)
             {
-                //var students = StudentLogic.FilterBookStudent(num.ToString(), id);
+                //var students = StudentLogic.FilterBookStudent(s, id);
 
                 //dataSourceInit(students);
             }
