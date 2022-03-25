@@ -172,7 +172,8 @@
     <Compile Include="Migrations\202203040203445_ChangedTeacher.cs" />
     <Compile Include="Migrations\202203040203445_ChangedTeacher.designer.cs">
       <DependentUpon>202203040203445_ChangedTeacher.cs</DependentUpon>
-
+      
+    </Compile>
     <Compile Include="Migrations\202203110142543_auxx_migration.cs" />
     <Compile Include="Migrations\202203110142543_auxx_migration.designer.cs">
       <DependentUpon>202203110142543_auxx_migration.cs</DependentUpon>
@@ -268,6 +269,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203040203445_ChangedTeacher.resx">
       <DependentUpon>202203040203445_ChangedTeacher.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203110142543_auxx_migration.resx">
       <DependentUpon>202203110142543_auxx_migration.cs</DependentUpon>
     </EmbeddedResource>
