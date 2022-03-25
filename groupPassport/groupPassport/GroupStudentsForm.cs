@@ -30,19 +30,15 @@ namespace groupPassport
                 this.Close();
             }
 
-            groupStudentsData.DataSource = group.Students;
             groupNameLabel.Text = "Группа " + group.GroupName;
-            groupStudentsData.Columns[0].Visible = false;
-            groupStudentsData.Columns[1].Visible = false;
-            groupStudentsData.Columns[2].Visible = false;
-
+            dataSourceInit(group.Students);
         }
 
         private void addStudentButton_Click(object sender, EventArgs e)
         {
             var f = new AddStudentForm(id);
             f.ShowDialog();
-            GroupStudentsForm_Load(sender, e);
+            dropButton_Click(sender, e);
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -52,7 +48,7 @@ namespace groupPassport
 
                 var f = new AddStudentForm(id, true, studentId);
                 f.ShowDialog();
-                GroupStudentsForm_Load(sender, e);
+                dropButton_Click(sender, e);
             }
             else
             {
@@ -67,8 +63,7 @@ namespace groupPassport
                 int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[2].Value);
 
                 StudentLogic.DeleteStudent(studentId, id);
-                GroupStudentsForm_Load(sender, e);
-
+                dropButton_Click(sender, e);
             }
             else
             {
@@ -81,35 +76,30 @@ namespace groupPassport
         {
             var f = new AddExistStudentForm(id);
             f.ShowDialog();
-            GroupStudentsForm_Load(sender, e);
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            dropButton_Click(sender, e);
         }
 
         private void bookTextBox_TextChanged(object sender, EventArgs e)
         {
             int num = -1;
+
+            if (bookTextBox.Text != "") { 
             try
             {
-                num = Convert.ToInt32(bookTextBox.Text);    
+                num = Convert.ToInt32(bookTextBox.Text);
             }
             catch
             {
-                MessageBox.Show("Неправильный формат");
+                MessageBox.Show("Неправильны формат номера зачетной книжки");
+            }
             }
 
-            if (num > -1)
+                if (num > -1)
             {
-                var students = StudentLogic.FilterBookStudent(num, id);
+                //var students = StudentLogic.FilterBookStudent(num.ToString(), id);
 
-                groupStudentsData.DataSource = students;
-                groupStudentsData.Columns[0].Visible = false;
-                groupStudentsData.Columns[1].Visible = false;
-                groupStudentsData.Columns[2].Visible = false;
-            }        
+                //dataSourceInit(students);
+            }
         }
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
@@ -118,10 +108,7 @@ namespace groupPassport
             if (s != "") {
                 var students = StudentLogic.FilterNameStudent(s, id);
 
-                groupStudentsData.DataSource = students;
-                groupStudentsData.Columns[0].Visible = false;
-                groupStudentsData.Columns[1].Visible = false;
-                groupStudentsData.Columns[2].Visible = false;
+                dataSourceInit(students);
             }
             else
             {
@@ -133,6 +120,7 @@ namespace groupPassport
         {
             nameTextBox.Text = "";
             birthDateTimePicker.Value = DateTime.Today;
+            bookTextBox.Text = "";
 
             GroupStudentsForm_Load(sender, e);
         }
@@ -144,6 +132,16 @@ namespace groupPassport
             {
                 StudentLogic.FilterDateStudent(date, id);
             }
+        }
+
+        void dataSourceInit(List<Student> students)
+        {
+            groupStudentsData.DataSource = students;
+            groupStudentsData.Columns[0].Visible = false;
+            groupStudentsData.Columns[1].Visible = false;
+            groupStudentsData.Columns[2].Visible = false;
+            groupStudentsData.Columns[6].Visible = false;
+            groupStudentsData.Columns[7].Visible = false;
         }
     }
 }

@@ -60,28 +60,39 @@ namespace groupPassport.Classes
         public static List<Student> FilterNameStudent(string s, int groupId)
         {
             var C = new Context();
-            List<Student> filteredStudents = new List<Student>();
+            List<Student> filteredStudents = C.Students.Where(c => c.GroupId == groupId).ToList();
             List<string> arr = s.Split(' ').ToList();
             arr.Remove("");
             if (s.Contains(' '))
             {
-                if (arr.Count == 1) filteredStudents = C.Students.Where(c => c.GroupId == groupId && (arr.Contains(c.FirstName) || arr.Contains(c.MiddleName) || arr.Contains(c.SurName))).ToList();
+                if (arr.Count == 1) filteredStudents = filteredStudents.Where(c => (arr.Contains(c.FirstName) || arr.Contains(c.MiddleName) || arr.Contains(c.SurName))).ToList();
 
-                if (arr.Count == 2) filteredStudents = C.Students.Where(c => c.GroupId == groupId && 
-                ((arr.Contains(c.FirstName) && (arr.Where(a => c.MiddleName.StartsWith(a)).ToList().Count != 0 || arr.Where(a => c.SurName.StartsWith(a)).ToList().Count != 0)) ||
+                if (arr.Count == 2) filteredStudents = filteredStudents.Where(c => 
+                (arr.Contains(c.FirstName) && (arr.Where(a => c.MiddleName.StartsWith(a)).ToList().Count != 0 || arr.Where(a => c.SurName.StartsWith(a)).ToList().Count != 0)) ||
                 (arr.Contains(c.MiddleName) && (arr.Where(a => c.FirstName.StartsWith(a)).ToList().Count != 0 || arr.Where(a => c.SurName.StartsWith(a)).ToList().Count != 0)) ||
                 (arr.Contains(c.SurName) && (arr.Where(a => c.FirstName.StartsWith(a)).ToList().Count != 0 || arr.Where(a => c.MiddleName.StartsWith(a)).ToList().Count != 0))
-                )).ToList();
+                ).ToList();
 
-                if (arr.Count == 3) filteredStudents = C.Students.Where(c => c.GroupId == groupId &&
-                ((arr.Contains(c.FirstName) && arr.Contains(c.MiddleName) && arr.Where(a => c.SurName.StartsWith(a)).ToList().Count != 0) ||
+                if (arr.Count == 3)
+                {
+                    if (!s.EndsWith(" ")) {
+                        filteredStudents = filteredStudents.Where(c =>
+                (arr.Contains(c.FirstName) && arr.Contains(c.MiddleName) && arr.Where(a => c.SurName.StartsWith(a)).ToList().Count != 0) ||
                 (arr.Contains(c.MiddleName) && arr.Contains(c.SurName) && arr.Where(a => c.FirstName.StartsWith(a)).ToList().Count != 0) ||
                 (arr.Contains(c.SurName) && arr.Contains(c.FirstName) && arr.Where(a => c.MiddleName.StartsWith(a)).ToList().Count != 0)
-                )).ToList();
+                ).ToList();
+                    }
+                    else
+                    {
+                        filteredStudents = filteredStudents.Where(c =>
+                arr.Contains(c.FirstName) && arr.Contains(c.MiddleName) && arr.Contains(c.SurName)
+                ).ToList();
+                    }
+                }
             }
             else
             {
-                filteredStudents = C.Students.Where(c => c.GroupId == groupId && (c.FirstName.Contains(s) || c.MiddleName.Contains(s) || c.SurName.Contains(s))).ToList();
+                filteredStudents = filteredStudents.Where(c => (c.FirstName.Contains(s) || c.MiddleName.Contains(s) || c.SurName.Contains(s))).ToList();
             }
             return filteredStudents;
         }
@@ -89,17 +100,17 @@ namespace groupPassport.Classes
         public static List<Student> FilterDateStudent(DateTime date, int groupId)
         {
             var C = new Context();
-            //var filterStudents = C.Students.Where(c => c.);
+            //var filteredStudents = C.Students.Where(c => c.GroupId == groupId && c.bd == date).ToList();
             return null;
         }
 
-        public static List<Student> FilterBookStudent(int num, int groupId)
+        public static List<Student> FilterBookStudent(string num, int groupId)
         {
             var C = new Context();
             string bookNum = num.ToString();
 
-            var filteredStudents = C.Students.Where(c => c.GroupId == groupId && c.Documents.Find(r => r.DocumentType == DocumentType.inn).DocumentNumber.Contains(bookNum)).ToList();
-            return filteredStudents;
+            //var filteredStudents = C.Students.Where(c => c.GroupId == groupId && c.num.ToString().StartWith(num)).ToList();
+            return null;
         }
     }
 }

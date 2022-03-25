@@ -120,7 +120,7 @@ namespace groupPassport
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.nameTextBox.MinimumSize = new System.Drawing.Size(400, 30);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(400, 30);
+            this.nameTextBox.Size = new System.Drawing.Size(400, 26);
             this.nameTextBox.TabIndex = 6;
             this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
@@ -163,7 +163,6 @@ namespace groupPassport
             this.label2.Size = new System.Drawing.Size(192, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Номер зачетной книжки";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -179,6 +178,7 @@ namespace groupPassport
             // 
             // dropButton
             // 
+            this.dropButton.AutoSize = true;
             this.dropButton.BackColor = System.Drawing.SystemColors.Control;
             this.dropButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.dropButton.Image = global::groupPassport.Properties.Resources.refresh__1_;
