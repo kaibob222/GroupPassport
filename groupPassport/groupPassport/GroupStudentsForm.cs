@@ -83,22 +83,22 @@ namespace groupPassport
         {
             int num = -1;
 
-            if (bookTextBox.Text != "") { 
-            try
-            {
-                string s = bookTextBox.Text;
-                var arr = s.Split(' ').ToList();
-                arr.Remove("");
-                if (arr.Count == 1)
+            if (bookTextBox.Text != "") {
+                try
                 {
-                    num = Convert.ToInt32(arr[0]);
+                    string s = bookTextBox.Text;
+                    var arr = s.Split(' ').ToList();
+                    arr.Remove("");
+                    if (arr.Count == 1)
+                    {
+                        num = Convert.ToInt32(arr[0]);
+                    }
+                    else throw new Exception();
                 }
-                else throw new Exception();
-            }
-            catch
-            {
-                MessageBox.Show("Неправильный формат номера зачетной книжки");
-            }
+                catch
+                {
+                    MessageBox.Show("Неправильный формат номера зачетной книжки");
+                }
             }
 
             if (num > -1)
