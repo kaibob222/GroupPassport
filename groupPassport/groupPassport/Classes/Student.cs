@@ -14,5 +14,8 @@ namespace groupPassport.Classes
         [ForeignKey("GroupId")]
         public Group Group { get; set; }
         public virtual List<Document> Documents { get; set; }
+        [MaxLength(6)]
+        public string ZachetkaNumber { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 }

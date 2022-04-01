@@ -180,6 +180,10 @@
     <Compile Include="Migrations\202203250116000_strange.designer.cs">
       <DependentUpon>202203250116000_strange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204010141538_student_changed.cs" />
+    <Compile Include="Migrations\202204010141538_student_changed.designer.cs">
+      <DependentUpon>202204010141538_student_changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NationalityForm.cs">
       <SubType>Form</SubType>
@@ -272,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203250116000_strange.resx">
       <DependentUpon>202203250116000_strange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204010141538_student_changed.resx">
+      <DependentUpon>202204010141538_student_changed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NationalityForm.resx">
       <DependentUpon>NationalityForm.cs</DependentUpon>
