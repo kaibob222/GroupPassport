@@ -17,8 +17,8 @@ namespace groupPassport
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new TeacherForm());
-            //Application.Run(new DocumentForm());
+            //Application.Run(new TeacherForm());
+            Application.Run(new Autorization());
 
         }
     }

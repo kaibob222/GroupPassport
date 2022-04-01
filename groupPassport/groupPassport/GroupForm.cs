@@ -7,15 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using groupPassport.Classes;
 
 namespace groupPassport
 {
     public partial class GroupForm : Form
     {
         Context context = new Context();
+        Person _user;
+        int _id;
+        private Access access;
+        
+        private Teacher _currentuser;
 
-        public GroupForm()
+        public GroupForm(Person user)
         {
+            access = new Access();
+            _user = user;
+            _id = user.Id;
             InitializeComponent();
         }
 
@@ -29,6 +38,11 @@ namespace groupPassport
             var query = from c in context.Groups
                         select new { Id = c.Id, GroupName = c.GroupName, Year = c.Year };
             dataGridView1.DataSource = query.ToList();
+            _currentuser = access.GetUser(_id);
+            
+           
+
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -54,8 +68,12 @@ namespace groupPassport
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddGroup add = new AddGroup();
-            add.Show();
+            if (_currentuser.Position == Position.admin)
+            {
+                AddGroup add = new AddGroup();
+                add.Show();
+            }
+            else MessageBox.Show("Вы не можете добавлять группы!");
         }
 
         private void GroupForm_Activated(object sender, EventArgs e)

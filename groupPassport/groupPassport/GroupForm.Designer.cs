@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -125,20 +124,20 @@
             this.гражданствоToolStripMenuItem,
             this.национальностьToolStripMenuItem});
             this.auxToolStripMenuItem.Name = "auxToolStripMenuItem";
-            this.auxToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.auxToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.auxToolStripMenuItem.Text = "Справочник";
             // 
             // гражданствоToolStripMenuItem
             // 
             this.гражданствоToolStripMenuItem.Name = "гражданствоToolStripMenuItem";
-            this.гражданствоToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.гражданствоToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.гражданствоToolStripMenuItem.Text = "Гражданство";
             this.гражданствоToolStripMenuItem.Click += new System.EventHandler(this.гражданствоToolStripMenuItem_Click);
             // 
             // национальностьToolStripMenuItem
             // 
             this.национальностьToolStripMenuItem.Name = "национальностьToolStripMenuItem";
-            this.национальностьToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.национальностьToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.национальностьToolStripMenuItem.Text = "Национальность";
             this.национальностьToolStripMenuItem.Click += new System.EventHandler(this.национальностьToolStripMenuItem_Click);
             // 

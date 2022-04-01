@@ -12,7 +12,7 @@ namespace groupPassport
 {
     public partial class Autorization : Form
     {
-        private AutorizationLogic _logic;
+        private AutorizationLogic _logic; 
         private Context _context;
         public Person _currentPerson;
         private string _login;
@@ -46,7 +46,8 @@ namespace groupPassport
             _currentPerson = _logic.GetPeopleList( _login, _password);
             if ( _currentPerson != null)
             {
-                GroupForm f = new GroupForm();
+                
+                GroupForm f = new GroupForm(_currentPerson);
                 this.Hide();
                 f.ShowDialog();
                 this.Close();
