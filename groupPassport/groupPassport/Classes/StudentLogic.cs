@@ -67,11 +67,25 @@ namespace groupPassport.Classes
             {
                 if (arr.Count == 1) filteredStudents = filteredStudents.Where(c => (arr.Contains(c.FirstName) || arr.Contains(c.MiddleName) || arr.Contains(c.SurName))).ToList();
 
-                if (arr.Count == 2) filteredStudents = filteredStudents.Where(c => 
+                if (arr.Count == 2)
+                {
+                    if (s.EndsWith(" "))
+                    {
+                        filteredStudents = filteredStudents.Where(c =>
+                (arr.Contains(c.FirstName) && arr.Contains(c.MiddleName)) ||
+                (arr.Contains(c.MiddleName) && arr.Contains(c.SurName)) ||
+                (arr.Contains(c.SurName) && arr.Contains(c.FirstName))
+                ).ToList();
+                    }
+                    else
+                    {
+                        filteredStudents = filteredStudents.Where(c =>
                 (arr.Contains(c.FirstName) && (arr.Where(a => c.MiddleName.StartsWith(a)).ToList().Count != 0 || arr.Where(a => c.SurName.StartsWith(a)).ToList().Count != 0)) ||
                 (arr.Contains(c.MiddleName) && (arr.Where(a => c.FirstName.StartsWith(a)).ToList().Count != 0 || arr.Where(a => c.SurName.StartsWith(a)).ToList().Count != 0)) ||
                 (arr.Contains(c.SurName) && (arr.Where(a => c.FirstName.StartsWith(a)).ToList().Count != 0 || arr.Where(a => c.MiddleName.StartsWith(a)).ToList().Count != 0))
                 ).ToList();
+                    }
+                }
 
                 if (arr.Count == 3)
                 {
