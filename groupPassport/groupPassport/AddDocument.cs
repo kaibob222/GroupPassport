@@ -13,10 +13,12 @@ namespace groupPassport
 {
     public partial class AddDocument : Form
     {
+        public int DocumentId { get; set; }
         public Student student { get; set; }
         public AddDocument()
         {
             InitializeComponent();
+            DocumentId = -1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +45,10 @@ namespace groupPassport
         private void AddDocument_Load(object sender, EventArgs e)
         {
             comboBox1.DataSource = Enum.GetValues(typeof(DocumentType));
+            if (DocumentId >= 0)
+            {
+                Classes.Auxilary.EditCitizenship(DocumentId, textBox2.Text);
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
