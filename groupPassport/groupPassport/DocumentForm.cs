@@ -50,5 +50,13 @@ namespace groupPassport
             }
             DocumentForm_Load(sender, e);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddDocument add = new AddDocument();
+            add.DocumentId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            add.ShowDialog();
+            DocumentForm_Load(sender, e);
+        }
     }
 }

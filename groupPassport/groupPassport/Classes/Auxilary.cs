@@ -16,6 +16,14 @@ namespace groupPassport.Classes
             c.Nationalities.Add(g);
             c.SaveChanges();
         }
+        public static void EditNationality(int id, string newname)
+        {
+            Context c = new Context();
+            Nationality g = new Nationality();
+            g = c.Nationalities.Find(id);
+            g.PersonNationality = newname;
+            c.SaveChanges();
+        }
 
         public static void AddCitizenship(string name)
         {
@@ -23,6 +31,15 @@ namespace groupPassport.Classes
             Citizenship g = new Citizenship();
             g.PersonCitizenship = name;
             c.Citizenships.Add(g);
+            c.SaveChanges();
+        }
+
+        public static void EditCitizenship(int id, string newname)
+        {
+            Context c = new Context();
+            Citizenship g = new Citizenship();
+            g = c.Citizenships.Find(id);
+            g.PersonCitizenship = newname;
             c.SaveChanges();
         }
 
@@ -35,6 +52,17 @@ namespace groupPassport.Classes
             g.StudentId = student;
             c.Documents.Add(g);
             c.SaveChanges();
+        }
+
+        public static void EditDocument(int id, string newname)
+        {
+            Context c = new Context();
+            Context c2 = new Context();
+            Document g = new Document();
+            g = c.Documents.Find(id);
+            g.DocumentNumber = newname;
+            c.SaveChanges();
+            c2.SaveChanges();
         }
 
         public static void DeleteNationality(int id)

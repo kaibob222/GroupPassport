@@ -12,9 +12,11 @@ namespace groupPassport
 {
     public partial class AddCitizenship : Form
     {
+        public int CitizenshipId { get; set; }
         public AddCitizenship()
         {
             InitializeComponent();
+            CitizenshipId = -1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,7 +41,10 @@ namespace groupPassport
 
         private void AddCitizenship_Load(object sender, EventArgs e)
         {
-
+            if(CitizenshipId >=0)
+            {
+                Classes.Auxilary.EditCitizenship(CitizenshipId,textBox1.Text);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
