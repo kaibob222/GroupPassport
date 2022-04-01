@@ -43,6 +43,19 @@ namespace groupPassport
                 dropButton.Visible = true;
             }
             button1.Visible = isEditing;
+            int n = C.Nationalities.Count();
+            int m = C.Citizenships.Count();
+            //textBox1.Text = Convert.ToString(n);
+            //foreach (DataRow row in C.Nationalities)
+            //NationalityBox.Items.AddRange(C.Nationalities.SqlQuery(@"SELECT PersonNationality from Nationalities"));
+            for (int i=1; i<=n; i++)
+            {
+                //NationalityBox.Items.Add(C.Nationalities.SelectMany);
+            }
+            for (int i = 1; i <= m; i++)
+            {
+                //CitizenshipBox.Items.Add(C.Citizenships.Select(c => c.Id == i).FirstOrDefault().ToString());
+            }
         }
 
         private void applyButton_Click(object sender, EventArgs e)
