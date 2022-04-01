@@ -46,5 +46,13 @@ namespace groupPassport
             }
             NationalityForm_Load(sender, e);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddNationality add = new AddNationality();
+            add.NationalityId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            add.ShowDialog();
+            NationalityForm_Load(sender, e);
+        }
     }
 }
