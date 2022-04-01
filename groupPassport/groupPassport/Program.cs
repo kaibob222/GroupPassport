@@ -19,6 +19,7 @@ namespace groupPassport
 
             Application.Run(new TeacherForm());
             //Application.Run(new DocumentForm());
+            //Application.Run(new Autorization());
 
         }
     }
