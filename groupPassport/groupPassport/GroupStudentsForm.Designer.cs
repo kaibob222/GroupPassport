@@ -134,8 +134,11 @@ namespace groupPassport
             // 
             // birthDateTimePicker
             // 
+            this.birthDateTimePicker.Checked = false;
+            this.birthDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.birthDateTimePicker.Location = new System.Drawing.Point(1138, 161);
             this.birthDateTimePicker.Name = "birthDateTimePicker";
+            this.birthDateTimePicker.ShowCheckBox = true;
             this.birthDateTimePicker.Size = new System.Drawing.Size(200, 26);
             this.birthDateTimePicker.TabIndex = 8;
             this.birthDateTimePicker.ValueChanged += new System.EventHandler(this.birthDateTimePicker_ValueChanged);

@@ -46,7 +46,7 @@ namespace groupPassport.Classes
             C.SaveChanges();
 
         }
-        public static void DeleteStudent(int id, int groupid)
+        public static void DeleteStudent(int id)
         {
             var C = new Context();
             var student = C.Students.Where(c => c.Id == id).FirstOrDefault();
@@ -57,10 +57,9 @@ namespace groupPassport.Classes
             C.SaveChanges();
         }
 
-        public static List<Student> FilterNameStudent(string s, int groupId)
+        public static List<Student> FilterNameStudent(List<Student> studentsData, string s)
         {
-            var C = new Context();
-            List<Student> filteredStudents = C.Students.Where(c => c.GroupId == groupId).ToList();
+            var filteredStudents = studentsData;
             List<string> arr = s.Split(' ').ToList();
             arr.Remove("");
             if (s.Contains(' '))
@@ -111,26 +110,32 @@ namespace groupPassport.Classes
             return filteredStudents;
         }
 
-        public static List<Student> FilterDateStudent(DateTime date, int groupId)
+        public static List<Student> FilterDateStudent(List<Student> studentsData, DateTime date)
         {
-            var C = new Context();
-            //var filteredStudents = C.Students.Where(c => c.GroupId == groupId && c.bd == date).ToList();
-            return null;
+            var filteredStudents = new List<Student>();
+            
+            filteredStudents = studentsData.Where(c => c.BirthDate.Date == date).ToList();
+
+            return filteredStudents;
         }
 
-        public static List<Student> FilterBookStudent(string s, int groupId)
+        public static List<Student> FilterBookStudent(List<Student> studentsData, string s)
         {
-            var C = new Context();
-
-            if (!s.EndsWith(" "))
+            var filteredStudents = new List<Student>();
+            
+            if (s.Length < 6)
             {
-                //var filteredStudents = C.Students.Where(c => c.GroupId == groupId && c.num.ToString().StartWith(s)).ToList();
+                filteredStudents = studentsData.Where(c => c.ZachetkaNumber.StartsWith(s)).ToList();
+            }
+            else if (s.Length == 6)
+            {
+                filteredStudents = studentsData.Where(c => c.ZachetkaNumber == s).ToList();
             }
             else
             {
-                //var filteredStudents = C.Students.Where(c => c.GroupId == groupId && c.num.ToString() == s.Split(' ')[0]).ToList();
+                System.Windows.Forms.MessageBox.Show("Неправильная длина номера");
             }
-            return null;
+            return filteredStudents;
         }
     }
 }
