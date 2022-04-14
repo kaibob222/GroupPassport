@@ -52,17 +52,22 @@ namespace groupPassport
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.RowCount > 0) { 
-                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                var f = new EditGroupForm(id);
-                f.ShowDialog();
-                dataGridView1.DataSource = context.Groups.ToList();
-
-            }
-            else
+            if (_currentuser.Position == Position.admin || _currentuser.Groups!= null)
             {
-                MessageBox.Show("Нет групп");
+                if (dataGridView1.RowCount > 0)
+                {
+                    int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                    var f = new EditGroupForm(id);
+                    f.ShowDialog();
+                    dataGridView1.DataSource = context.Groups.ToList();
+
+                }
+                else
+                {
+                    MessageBox.Show("Нет групп");
+                }
             }
+            else MessageBox.Show("Вы не можете редактировать группы!");
 
         }
 
@@ -84,15 +89,19 @@ namespace groupPassport
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            try
+            if (_currentuser.Position == Position.admin)
             {
-                Classes.GroupLogic.DeleteGroup(groupId);
+                int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                try
+                {
+                    Classes.GroupLogic.DeleteGroup(groupId);
+                }
+                catch
+                {
+                    MessageBox.Show("ERROR: Ошибка в удалении группы");
+                }
             }
-            catch
-            {
-                MessageBox.Show("ERROR: Ошибка в удалении группы");
-            }
+            else MessageBox.Show("Вы не можете удалять группы!");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -128,7 +137,7 @@ namespace groupPassport
         {
             int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
-            var f = new GroupStudentsForm(groupId);
+            var f = new GroupStudentsForm(groupId,_currentuser);
             f.ShowDialog();
         }
 
@@ -136,7 +145,7 @@ namespace groupPassport
         {
             int groupId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
-            var f = new GroupStudentsForm(groupId);
+            var f = new GroupStudentsForm(groupId,_currentuser);
             f.ShowDialog();
         }
 
@@ -146,7 +155,7 @@ namespace groupPassport
 
             try
             {
-                var f = new GroupStudentsForm(groupId);
+                var f = new GroupStudentsForm(groupId,_currentuser);
                 f.ShowDialog();
             }
             catch
@@ -165,6 +174,14 @@ namespace groupPassport
         {
             NationalityForm form2 = new NationalityForm();
             form2.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+          
+            var f = new TeacherForm(_currentuser);
+            f.Show();
+            
         }
     }
 }

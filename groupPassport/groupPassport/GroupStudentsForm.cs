@@ -14,10 +14,14 @@ namespace groupPassport
     public partial class GroupStudentsForm : Form
     {
         int id;
-        public GroupStudentsForm(int _id)
+
+        private Teacher currentuser;
+
+        public GroupStudentsForm(int _id,Teacher _user)
         {
             InitializeComponent();
             id = _id;
+            currentuser = _user;
         }
 
         private void GroupStudentsForm_Load(object sender, EventArgs e)
@@ -40,48 +44,64 @@ namespace groupPassport
 
         private void addStudentButton_Click(object sender, EventArgs e)
         {
-            var f = new AddStudentForm(id);
-            f.ShowDialog();
-            GroupStudentsForm_Load(sender, e);
+            if (currentuser.Position == Position.admin)
+            {
+                var f = new AddStudentForm(id);
+                f.ShowDialog();
+                GroupStudentsForm_Load(sender, e);
+            }
+            else MessageBox.Show("Вы не можете создавать студентов!");
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            if (groupStudentsData.RowCount > 0) { 
-                int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[2].Value);
-
-                var f = new AddStudentForm(id, true, studentId);
-                f.ShowDialog();
-                GroupStudentsForm_Load(sender, e);
-            }
-            else
+            if (currentuser.Position == Position.admin || currentuser.Groups != null)
             {
-                MessageBox.Show("Нет студентов");
+                if (groupStudentsData.RowCount > 0)
+                {
+                    int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[2].Value);
+
+                    var f = new AddStudentForm(id, true, studentId);
+                    f.ShowDialog();
+                    GroupStudentsForm_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Нет студентов");
+                }
             }
+            else MessageBox.Show("Вы не можете редактировать студентов");
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            if (groupStudentsData.RowCount > 0)
+            if (currentuser.Position == Position.admin)
             {
-                int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[2].Value);
+                if (groupStudentsData.RowCount > 0)
+                {
+                    int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[2].Value);
 
-                StudentLogic.DeleteStudent(studentId, id);
-                GroupStudentsForm_Load(sender, e);
+                    StudentLogic.DeleteStudent(studentId, id);
+                    GroupStudentsForm_Load(sender, e);
 
+                }
+                else
+                {
+                    MessageBox.Show("Нет студентов");
+                }
             }
-            else
-            {
-                MessageBox.Show("Нет студентов");
-            }
-
+            else MessageBox.Show("Вы не можете удалять студентов!");
         }
 
         private void AddExistStudentButton_Click(object sender, EventArgs e)
         {
-            var f = new AddExistStudentForm(id);
-            f.ShowDialog();
-            GroupStudentsForm_Load(sender, e);
+            if (currentuser.Position == Position.admin)
+            {
+                var f = new AddExistStudentForm(id);
+                f.ShowDialog();
+                GroupStudentsForm_Load(sender, e);
+            }
+            else MessageBox.Show("Вы не можете добавлять сткудентов!");
         }
     }
 }

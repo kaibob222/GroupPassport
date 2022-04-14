@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using groupPassport.Classes
-    ;
+using groupPassport.Classes;
+
 namespace groupPassport.TeacherForms
 {
     public partial class AddTeacher : Form
@@ -23,6 +23,10 @@ namespace groupPassport.TeacherForms
             comboBox1.DataSource = new BindingSource(Classes.DescriptionAttributes<Position>.RetrieveAttributes(), null);
             comboBox1.DisplayMember = "Key";
             comboBox1.ValueMember = "Value";
+            listBox1.DataSource = new BindingSource(Classes.DescriptionAttributes<Group>.RetrieveAttributes(), null);
+            listBox1.DisplayMember = "Name";
+            
+            
         }
 
         private void label4_Click(object sender, EventArgs e)

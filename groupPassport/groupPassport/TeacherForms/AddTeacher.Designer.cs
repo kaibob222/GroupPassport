@@ -43,6 +43,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -105,7 +106,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(271, 366);
+            this.button1.Location = new System.Drawing.Point(268, 389);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 23);
             this.button1.TabIndex = 7;
@@ -162,11 +163,21 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Роль";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(428, 306);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 84);
+            this.listBox1.TabIndex = 14;
+            // 
             // AddTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 415);
+            this.ClientSize = new System.Drawing.Size(637, 471);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox5);
@@ -206,5 +217,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

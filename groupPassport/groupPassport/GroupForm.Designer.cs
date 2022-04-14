@@ -42,6 +42,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.studentsButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -192,11 +193,23 @@
             this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(135, 493);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(99, 37);
+            this.button5.TabIndex = 10;
+            this.button5.TabStop = false;
+            this.button5.Text = "Сотрудники";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // GroupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 553);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox1);
@@ -239,5 +252,6 @@
         private System.Windows.Forms.ToolStripMenuItem гражданствоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem национальностьToolStripMenuItem;
         private System.Windows.Forms.Button studentsButton;
+        private System.Windows.Forms.Button button5;
     }
 }

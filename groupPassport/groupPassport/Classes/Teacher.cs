@@ -22,6 +22,10 @@ namespace groupPassport.Classes
     }
     public class Teacher : Person
     {
+        public Teacher(): base()
+        {
+            Groups = new List<Group>();
+        }
 
         public Position Position { get; set; } //Должность
         public virtual List<Group> Groups { get; set; }

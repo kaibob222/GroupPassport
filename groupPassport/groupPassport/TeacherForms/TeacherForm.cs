@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using groupPassport.Classes;
 namespace groupPassport
 {
     public partial class TeacherForm : Form
     {
         Context context = new Context();
+        private Teacher currentuser;
 
-        public TeacherForm()
+        public TeacherForm(Teacher _user)
         {
-            
+            currentuser = _user;
             InitializeComponent();
         }
 
@@ -29,10 +30,14 @@ namespace groupPassport
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TeacherForms.AddTeacher add = new TeacherForms.AddTeacher();
-            add.ShowDialog();
-            Context c = new Context();
-            dataGridView1.DataSource = c.Teachers.ToList();
+            if (currentuser.Position == Position.admin)
+            {
+                TeacherForms.AddTeacher add = new TeacherForms.AddTeacher();
+                add.ShowDialog();
+                Context c = new Context();
+                dataGridView1.DataSource = c.Teachers.ToList();
+            }
+            else MessageBox.Show("Вы не можете добавлять сотрудников!");
         }
         private void TeacherForm_Activated(object sender, EventArgs e)
         {
@@ -47,24 +52,32 @@ namespace groupPassport
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
-            TeacherForms.EditTeacherForm editTeacher = new TeacherForms.EditTeacherForm(id);
-            editTeacher.ShowDialog();
-            dataGridView1.DataSource = context.Teachers.ToList();
+            if (currentuser.Position == Position.admin || currentuser.Groups != null)
+            {
+                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
+                TeacherForms.EditTeacherForm editTeacher = new TeacherForms.EditTeacherForm(id);
+                editTeacher.ShowDialog();
+                dataGridView1.DataSource = context.Teachers.ToList();
+            }
+            else MessageBox.Show("Вы не можете редактировть данные сотрудников!");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
-            try
+            if (currentuser.Position == Position.admin)
             {
-                DeleteTeacherLogic.DeleteTeacher(id);
+                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
+                try
+                {
+                    DeleteTeacherLogic.DeleteTeacher(id);
+                }
+                catch
+                {
+                    MessageBox.Show("ERROR: Ошибка в удалении пользователя");
+                }
+                dataGridView1.DataSource = context.Teachers.ToList();
             }
-            catch
-            {
-                MessageBox.Show("ERROR: Ошибка в удалении пользователя");
-            }
-            dataGridView1.DataSource = context.Teachers.ToList();
+            else MessageBox.Show("Вы не можете удалять сотрудников!");
         }
     }
 }
