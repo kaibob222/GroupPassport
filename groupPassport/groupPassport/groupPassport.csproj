@@ -184,6 +184,18 @@
     <Compile Include="Migrations\202204010141538_student_changed.designer.cs">
       <DependentUpon>202204010141538_student_changed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204080126356_student_changed_again.cs" />
+    <Compile Include="Migrations\202204080126356_student_changed_again.designer.cs">
+      <DependentUpon>202204080126356_student_changed_again.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204080148391_added_citizenship_student.cs" />
+    <Compile Include="Migrations\202204080148391_added_citizenship_student.designer.cs">
+      <DependentUpon>202204080148391_added_citizenship_student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204150214280_Foreign key Id added.cs" />
+    <Compile Include="Migrations\202204150214280_Foreign key Id added.designer.cs">
+      <DependentUpon>202204150214280_Foreign key Id added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202203250048319_m2.cs" />
     <Compile Include="Migrations\202203250048319_m2.designer.cs">
       <DependentUpon>202203250048319_m2.cs</DependentUpon>
@@ -283,6 +295,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204010141538_student_changed.resx">
       <DependentUpon>202204010141538_student_changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204080126356_student_changed_again.resx">
+      <DependentUpon>202204080126356_student_changed_again.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204080148391_added_citizenship_student.resx">
+      <DependentUpon>202204080148391_added_citizenship_student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204150214280_Foreign key Id added.resx">
+      <DependentUpon>202204150214280_Foreign key Id added.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NationalityForm.resx">
       <DependentUpon>NationalityForm.cs</DependentUpon>

@@ -48,7 +48,7 @@ namespace groupPassport
             this.label8 = new System.Windows.Forms.Label();
             this.CitizenshipBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ZachNumberTextBox = new System.Windows.Forms.TextBox();
             this.MilitaryBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.EducationFormBox = new System.Windows.Forms.ComboBox();
@@ -68,7 +68,7 @@ namespace groupPassport
             // 
             // fNameTextBox
             // 
-            this.fNameTextBox.Location = new System.Drawing.Point(253, 111);
+            this.fNameTextBox.Location = new System.Drawing.Point(253, 152);
             this.fNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fNameTextBox.Name = "fNameTextBox";
             this.fNameTextBox.Size = new System.Drawing.Size(260, 22);
@@ -76,7 +76,7 @@ namespace groupPassport
             // 
             // sNameTextBox
             // 
-            this.sNameTextBox.Location = new System.Drawing.Point(253, 154);
+            this.sNameTextBox.Location = new System.Drawing.Point(253, 106);
             this.sNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sNameTextBox.Name = "sNameTextBox";
             this.sNameTextBox.Size = new System.Drawing.Size(260, 22);
@@ -93,7 +93,7 @@ namespace groupPassport
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 114);
+            this.label2.Location = new System.Drawing.Point(60, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 17);
             this.label2.TabIndex = 4;
@@ -102,7 +102,7 @@ namespace groupPassport
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 157);
+            this.label3.Location = new System.Drawing.Point(60, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 5;
@@ -185,6 +185,7 @@ namespace groupPassport
             this.GenderBox.Name = "GenderBox";
             this.GenderBox.Size = new System.Drawing.Size(205, 24);
             this.GenderBox.TabIndex = 14;
+            this.GenderBox.Text = "Выбрать...";
             // 
             // label7
             // 
@@ -202,6 +203,7 @@ namespace groupPassport
             this.NationalityBox.Name = "NationalityBox";
             this.NationalityBox.Size = new System.Drawing.Size(205, 24);
             this.NationalityBox.TabIndex = 16;
+            this.NationalityBox.Text = "Выбрать...";
             // 
             // label8
             // 
@@ -219,6 +221,7 @@ namespace groupPassport
             this.CitizenshipBox.Name = "CitizenshipBox";
             this.CitizenshipBox.Size = new System.Drawing.Size(205, 24);
             this.CitizenshipBox.TabIndex = 18;
+            this.CitizenshipBox.Text = "Выбрать...";
             // 
             // label9
             // 
@@ -229,13 +232,13 @@ namespace groupPassport
             this.label9.TabIndex = 19;
             this.label9.Text = "Номер зачетной книжки";
             // 
-            // textBox1
+            // ZachNumberTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(251, 418);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 22);
-            this.textBox1.TabIndex = 20;
+            this.ZachNumberTextBox.Location = new System.Drawing.Point(251, 418);
+            this.ZachNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ZachNumberTextBox.Name = "ZachNumberTextBox";
+            this.ZachNumberTextBox.Size = new System.Drawing.Size(260, 22);
+            this.ZachNumberTextBox.TabIndex = 20;
             // 
             // MilitaryBox
             // 
@@ -247,6 +250,7 @@ namespace groupPassport
             this.MilitaryBox.Name = "MilitaryBox";
             this.MilitaryBox.Size = new System.Drawing.Size(205, 24);
             this.MilitaryBox.TabIndex = 22;
+            this.MilitaryBox.Text = "Выбрать...";
             // 
             // label10
             // 
@@ -267,6 +271,7 @@ namespace groupPassport
             this.EducationFormBox.Name = "EducationFormBox";
             this.EducationFormBox.Size = new System.Drawing.Size(205, 24);
             this.EducationFormBox.TabIndex = 24;
+            this.EducationFormBox.Text = "Выбрать...";
             // 
             // label11
             // 
@@ -287,6 +292,7 @@ namespace groupPassport
             this.EducationBox.Name = "EducationBox";
             this.EducationBox.Size = new System.Drawing.Size(205, 24);
             this.EducationBox.TabIndex = 26;
+            this.EducationBox.Text = "Выбрать...";
             // 
             // label12
             // 
@@ -308,7 +314,7 @@ namespace groupPassport
             this.Controls.Add(this.label11);
             this.Controls.Add(this.MilitaryBox);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ZachNumberTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.CitizenshipBox);
             this.Controls.Add(this.label8);
@@ -358,7 +364,7 @@ namespace groupPassport
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox CitizenshipBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ZachNumberTextBox;
         private System.Windows.Forms.ComboBox MilitaryBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox EducationFormBox;
