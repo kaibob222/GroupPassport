@@ -66,5 +66,150 @@ namespace groupPassport
             }
             dataGridView1.DataSource = context.Teachers.ToList();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.ClearSelection();
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+                return;
+            var values = textBox1.Text.Split(new char[] { ' ' },
+        StringSplitOptions.RemoveEmptyEntries);
+
+            if (values.Length == 1)
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    foreach (string value in values)
+                    {
+                        var row = dataGridView1.Rows[i];
+
+                        if
+                            (row.Cells["FirstName"].Value.ToString().Contains(value) ||
+                            row.Cells["SurName"].Value.ToString().Contains(value) ||
+                            row.Cells["MiddleName"].Value.ToString().Contains(value))
+
+                        {
+                            row.Selected = true;
+                        }
+
+
+                    }
+                }
+            }
+            
+
+            if (values.Length == 2)
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    var row = dataGridView1.Rows[i];
+
+                    if
+                        (row.Cells["FirstName"].Value.ToString().Contains(values[0]) &&
+                        row.Cells["SurName"].Value.ToString().Contains(values[1]))
+                    {
+                        row.Selected = true;
+                    }
+
+                    if
+                        (row.Cells["FirstName"].Value.ToString().Contains(values[1]) &&
+                        row.Cells["SurName"].Value.ToString().Contains(values[0]))
+                    {
+                        row.Selected = true;
+                    }
+
+                    if
+                        (row.Cells["FirstName"].Value.ToString().Contains(values[0]) &&
+                        row.Cells["MiddleName"].Value.ToString().Contains(values[1]))
+                    {
+                        row.Selected = true;
+                    }
+
+                    if
+                        (row.Cells["FirstName"].Value.ToString().Contains(values[1]) &&
+                        row.Cells["MiddleName"].Value.ToString().Contains(values[0]))
+                    {
+                        row.Selected = true;
+                    }
+
+                    if
+                        (row.Cells["SurName"].Value.ToString().Contains(values[0]) &&
+                        row.Cells["MiddleName"].Value.ToString().Contains(values[1]))
+                    {
+                        row.Selected = true;
+                    }
+
+                    if
+                        (row.Cells["SurName"].Value.ToString().Contains(values[1]) &&
+                        row.Cells["MiddleName"].Value.ToString().Contains(values[0]))
+                    {
+                        row.Selected = true;
+                    }
+
+                }
+            }
+
+            if (values.Length == 3)
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    var row = dataGridView1.Rows[i];
+
+                    if
+                        (row.Cells["FirstName"].Value.ToString().Contains(values[0]) &&
+                        row.Cells["SurName"].Value.ToString().Contains(values[1]) &&
+                        row.Cells["MiddleName"].Value.ToString().Contains(values[2]))
+
+                    {
+                        row.Selected = true;
+                    }
+
+                    if
+                        (row.Cells["FirstName"].Value.ToString().Contains(values[0]) &&
+                        row.Cells["SurName"].Value.ToString().Contains(values[2]) &&
+                        row.Cells["MiddleName"].Value.ToString().Contains(values[1]))
+
+                    {
+                        row.Selected = true;
+                    }
+
+                    if
+                            (row.Cells["FirstName"].Value.ToString().Contains(values[1]) &&
+                            row.Cells["SurName"].Value.ToString().Contains(values[0]) &&
+                            row.Cells["MiddleName"].Value.ToString().Contains(values[2]))
+
+                    {
+                        row.Selected = true;
+                    }
+
+                    if
+                            (row.Cells["FirstName"].Value.ToString().Contains(values[1]) &&
+                            row.Cells["SurName"].Value.ToString().Contains(values[2]) &&
+                            row.Cells["MiddleName"].Value.ToString().Contains(values[0]))
+
+                    {
+                        row.Selected = true;
+                    }
+
+                    if
+                            (row.Cells["FirstName"].Value.ToString().Contains(values[2]) &&
+                            row.Cells["SurName"].Value.ToString().Contains(values[1]) &&
+                            row.Cells["MiddleName"].Value.ToString().Contains(values[0]))
+
+                    {
+                        row.Selected = true;
+                    }
+
+                    if
+                            (row.Cells["FirstName"].Value.ToString().Contains(values[2]) &&
+                            row.Cells["SurName"].Value.ToString().Contains(values[0]) &&
+                            row.Cells["MiddleName"].Value.ToString().Contains(values[1]))
+
+                    {
+                        row.Selected = true;
+                    }
+                }
+            }
+        }
     }
 }

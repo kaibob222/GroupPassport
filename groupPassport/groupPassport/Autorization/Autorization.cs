@@ -62,7 +62,7 @@ namespace groupPassport
 
         private void Autorization_Load(object sender, EventArgs e)
         {
-
+            Password.UseSystemPasswordChar = true;
         }
     }
 }

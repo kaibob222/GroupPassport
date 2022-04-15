@@ -7,13 +7,13 @@ namespace groupPassport.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class teacher : IMigrationMetadata
+    public sealed partial class m2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(teacher));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(m2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202203031516446_teacher"; }
+            get { return "202203250048319_m2"; }
         }
         
         string IMigrationMetadata.Source

@@ -56,5 +56,13 @@ namespace groupPassport
             }
             CitizenshipForm_Load_1(sender, e);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddCitizenship add = new AddCitizenship();
+            add.CitizenshipId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            add.ShowDialog();
+            CitizenshipForm_Load_1(sender, e);
+        }
     }
 }

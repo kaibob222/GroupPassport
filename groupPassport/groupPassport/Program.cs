@@ -15,9 +15,11 @@ namespace groupPassport
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GroupForm());
-            //Application.Run(new Autorization());
+
+
+            //Application.Run(new TeacherForm());
             //Application.Run(new DocumentForm());
+            Application.Run(new Autorization());
 
         }
     }
