@@ -189,6 +189,10 @@
     <Compile Include="Migrations\202204071209545_access.designer.cs">
       <DependentUpon>202204071209545_access.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204142228455_s2.cs" />
+    <Compile Include="Migrations\202204142228455_s2.designer.cs">
+      <DependentUpon>202204142228455_s2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NationalityForm.cs">
       <SubType>Form</SubType>
@@ -284,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204071209545_access.resx">
       <DependentUpon>202204071209545_access.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204142228455_s2.resx">
+      <DependentUpon>202204142228455_s2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NationalityForm.resx">
       <DependentUpon>NationalityForm.cs</DependentUpon>

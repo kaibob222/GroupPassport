@@ -48,10 +48,21 @@ namespace groupPassport.TeacherForms
             comboBox1.DataSource = new BindingSource(Classes.DescriptionAttributes<Classes.Position>.RetrieveAttributes(), null);
             comboBox1.DisplayMember = "Key";
             comboBox1.ValueMember = "Value";
-            //comboBox1.SelectedIndex = 2;
+
+            
             comboBox1.SelectedItem = comboBox1.Items.Cast<KeyValuePair<string, string>>()
                 .Where(x => x.Value==teacher.Position.ToString()).FirstOrDefault();
-            //comboBox1.SelectedValue = teacher.Position;
+
+            listBox1.DataSource = C.Groups.ToList();
+            listBox1.DisplayMember = "GroupName";
+            listBox1.ValueMember = "Id";
+            listBox1.SelectionMode = SelectionMode.MultiExtended;
+            
+            //foreach (var group in teacher.Groups)
+            //{
+            //    if(listBox1.Items.)
+            //}
+
             textBox1.Text = teacher.SurName;
             textBox2.Text = teacher.FirstName;
             textBox3.Text = teacher.MiddleName;

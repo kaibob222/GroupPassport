@@ -43,6 +43,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.groups = new System.Windows.Forms.CheckedListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -88,21 +89,21 @@
             this.textBox1.Location = new System.Drawing.Point(253, 95);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(145, 22);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(253, 134);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(145, 22);
-            this.textBox2.TabIndex = 5;
+            this.textBox2.TabIndex = 1;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(253, 179);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(145, 22);
-            this.textBox3.TabIndex = 6;
+            this.textBox3.TabIndex = 2;
             // 
             // button1
             // 
@@ -137,14 +138,14 @@
             this.textBox4.Location = new System.Drawing.Point(253, 218);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(145, 22);
-            this.textBox4.TabIndex = 10;
+            this.textBox4.TabIndex = 3;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(253, 257);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(145, 22);
-            this.textBox5.TabIndex = 11;
+            this.textBox5.TabIndex = 4;
             // 
             // comboBox1
             // 
@@ -152,7 +153,7 @@
             this.comboBox1.Location = new System.Drawing.Point(253, 306);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(145, 24);
-            this.comboBox1.TabIndex = 12;
+            this.comboBox1.TabIndex = 5;
             // 
             // label7
             // 
@@ -163,14 +164,22 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Роль";
             // 
+            // groups
+            // 
+            this.groups.FormattingEnabled = true;
+            this.groups.Location = new System.Drawing.Point(428, 95);
+            this.groups.Name = "groups";
+            this.groups.Size = new System.Drawing.Size(197, 89);
+            this.groups.TabIndex = 15;
+            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(428, 306);
+            this.listBox1.Location = new System.Drawing.Point(428, 260);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 84);
-            this.listBox1.TabIndex = 14;
+            this.listBox1.Size = new System.Drawing.Size(197, 84);
+            this.listBox1.TabIndex = 6;
             // 
             // AddTeacher
             // 
@@ -178,6 +187,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 471);
             this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.groups);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox5);
@@ -217,6 +227,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckedListBox groups;
         private System.Windows.Forms.ListBox listBox1;
     }
 }

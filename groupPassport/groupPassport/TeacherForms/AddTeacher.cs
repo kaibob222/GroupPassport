@@ -13,6 +13,8 @@ namespace groupPassport.TeacherForms
 {
     public partial class AddTeacher : Form
     {
+        Context context = new Context();
+       
         public AddTeacher()
         {
             InitializeComponent();
@@ -23,10 +25,12 @@ namespace groupPassport.TeacherForms
             comboBox1.DataSource = new BindingSource(Classes.DescriptionAttributes<Position>.RetrieveAttributes(), null);
             comboBox1.DisplayMember = "Key";
             comboBox1.ValueMember = "Value";
-            listBox1.DataSource = new BindingSource(Classes.DescriptionAttributes<Group>.RetrieveAttributes(), null);
-            listBox1.DisplayMember = "Name";
-            
-            
+           
+            listBox1.DataSource = context.Groups.ToList();
+            listBox1.DisplayMember = "GroupName";
+            listBox1.ValueMember = "Id";
+            listBox1.SelectionMode = SelectionMode.MultiExtended;
+              
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -36,15 +40,17 @@ namespace groupPassport.TeacherForms
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
             if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "")
-            {
+            { 
+            
                 try
                 {
                     Position p = (Position)Enum.Parse(typeof(Position), (string)comboBox1.SelectedValue);
-                    AddTeacherLogic.AddTeacher(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text,p);
+                    AddTeacherLogic.AddTeacher(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text,p, listBox1.SelectedItems.Cast<Group>().ToList());
                     this.Close();
                 }
-                catch
+                catch(Exception err)
                 {
                     MessageBox.Show("Ошибка в добавлении учителя!");
                 }
