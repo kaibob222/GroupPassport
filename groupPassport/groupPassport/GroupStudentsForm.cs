@@ -35,7 +35,6 @@ namespace groupPassport
             groupStudentsData.Columns[0].Visible = false;
             groupStudentsData.Columns[1].Visible = false;
             groupStudentsData.Columns[2].Visible = false;
-
         }
 
         private void addStudentButton_Click(object sender, EventArgs e)
@@ -48,8 +47,8 @@ namespace groupPassport
         private void editButton_Click(object sender, EventArgs e)
         {
             if (groupStudentsData.RowCount > 0) { 
-                int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[2].Value);
-
+                int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[12].Value);//10-id
+                //groupNameLabel.Text = studentId.ToString();
                 var f = new AddStudentForm(id, true, studentId);
                 f.ShowDialog();
                 GroupStudentsForm_Load(sender, e);
@@ -64,7 +63,7 @@ namespace groupPassport
         {
             if (groupStudentsData.RowCount > 0)
             {
-                int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[2].Value);
+                int studentId = Convert.ToInt32(groupStudentsData.CurrentRow.Cells[12].Value);
 
                 StudentLogic.DeleteStudent(studentId, id);
                 GroupStudentsForm_Load(sender, e);
