@@ -33,9 +33,9 @@ namespace groupPassport
 
             studentsData = group.Students;
             groupNameLabel.Text = "Группа " + group.GroupName;
-            groupStudentsData.Columns[0].Visible = false;
-            groupStudentsData.Columns[1].Visible = false;
-            groupStudentsData.Columns[2].Visible = false;
+            //groupStudentsData.Columns[0].Visible = false;
+            //groupStudentsData.Columns[1].Visible = false;
+            //groupStudentsData.Columns[2].Visible = false;
             dataSourceInit(studentsData);
         }
 
